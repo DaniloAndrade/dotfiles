@@ -74,4 +74,47 @@ config.keys = {
   { key = "Tab", mods = "LEADER", action = wezterm.action.SwitchWorkspaceRelative(-1) },
 }
 
+-- Tab bar retro (mais compacto que o fancy)
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = false
+config.colors.tab_bar = {
+  background = "#011423",
+  active_tab = {
+    bg_color = "#033259",
+    fg_color = "#CBE0F0",
+  },
+  inactive_tab = {
+    bg_color = "#011423",
+    fg_color = "#214969",
+  },
+  inactive_tab_hover = {
+    bg_color = "#011423",
+    fg_color = "#CBE0F0",
+  },
+  new_tab = {
+    bg_color = "#011423",
+    fg_color = "#214969",
+  },
+  new_tab_hover = {
+    bg_color = "#011423",
+    fg_color = "#CBE0F0",
+  },
+}
+
+-- Status: workspace à esquerda, hora à direita
+wezterm.on("update-right-status", function(window, pane)
+  local workspace = window:active_workspace()
+  local time = wezterm.strftime("%H:%M")
+
+  window:set_left_status(wezterm.format({
+    { Foreground = { Color = "#47FF9C" } },
+    { Text = " [" .. workspace .. "] " },
+  }))
+
+  window:set_right_status(wezterm.format({
+    { Foreground = { Color = "#CBE0F0" } },
+    { Text = " " .. time .. " " },
+  }))
+end)
+
 return config
