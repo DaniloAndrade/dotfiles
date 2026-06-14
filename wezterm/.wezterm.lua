@@ -20,6 +20,7 @@ config.font_size = 19
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 10
+config.window_padding = { left = 4, right = 4, top = 4, bottom = 4 }
 
 -- Leader key
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
@@ -100,6 +101,20 @@ config.colors.tab_bar = {
     fg_color = "#CBE0F0",
   },
 }
+
+-- Título da aba: nome customizado ou basename do processo
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local title = tab.tab_title
+  if title and #title > 0 then
+    return title
+  end
+  local pane = tab.active_pane
+  local process = pane.foreground_process_name
+  if process and #process > 0 then
+    return " " .. process:match("([^/\\]+)$") .. " "
+  end
+  return tab.active_pane.title
+end)
 
 -- Status: workspace à esquerda, hora à direita
 wezterm.on("update-right-status", function(window, pane)
