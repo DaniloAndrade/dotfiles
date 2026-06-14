@@ -58,6 +58,20 @@ config.keys = {
   { key = "7", mods = "LEADER", action = wezterm.action.ActivateTab(6) },
   { key = "8", mods = "LEADER", action = wezterm.action.ActivateTab(7) },
   { key = "9", mods = "LEADER", action = wezterm.action.ActivateTab(8) },
+  -- Workspaces
+  { key = "S", mods = "LEADER", action = wezterm.action.PromptInputLine {
+    description = "Nome do novo workspace:",
+    action = wezterm.action_callback(function(window, pane, line)
+      if line then
+        window:perform_action(
+          wezterm.action.SwitchToWorkspace { name = line },
+          pane
+        )
+      end
+    end),
+  }},
+  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs { flags = "WORKSPACES" } },
+  { key = "Tab", mods = "LEADER", action = wezterm.action.SwitchWorkspaceRelative(-1) },
 }
 
 return config
