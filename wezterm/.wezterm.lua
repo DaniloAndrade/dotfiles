@@ -36,6 +36,28 @@ config.keys = {
   -- Ações de painel
   { key = "x", mods = "LEADER", action = wezterm.action.CloseCurrentPane { confirm = true } },
   { key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
+  -- Abas
+  { key = "c", mods = "LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+  { key = "n", mods = "LEADER", action = wezterm.action.ActivateTabRelative(1) },
+  { key = "p", mods = "LEADER", action = wezterm.action.ActivateTabRelative(-1) },
+  { key = ",", mods = "LEADER", action = wezterm.action.PromptInputLine {
+    description = "Novo nome para a aba:",
+    action = wezterm.action_callback(function(window, pane, line)
+      if line then
+        window:active_tab():set_title(line)
+      end
+    end),
+  }},
+  -- Ir para aba por número
+  { key = "1", mods = "LEADER", action = wezterm.action.ActivateTab(0) },
+  { key = "2", mods = "LEADER", action = wezterm.action.ActivateTab(1) },
+  { key = "3", mods = "LEADER", action = wezterm.action.ActivateTab(2) },
+  { key = "4", mods = "LEADER", action = wezterm.action.ActivateTab(3) },
+  { key = "5", mods = "LEADER", action = wezterm.action.ActivateTab(4) },
+  { key = "6", mods = "LEADER", action = wezterm.action.ActivateTab(5) },
+  { key = "7", mods = "LEADER", action = wezterm.action.ActivateTab(6) },
+  { key = "8", mods = "LEADER", action = wezterm.action.ActivateTab(7) },
+  { key = "9", mods = "LEADER", action = wezterm.action.ActivateTab(8) },
 }
 
 return config
