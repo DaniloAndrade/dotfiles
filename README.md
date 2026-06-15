@@ -19,17 +19,59 @@ dotfiles/
             └── init.lua
 ```
 
-## Dependências
+## Pré-requisitos
 
-- [GNU Stow](https://www.gnu.org/software/stow/)
+### Obrigatório
+
+| Ferramenta | Instalar | Função |
+|---|---|---|
+| [Homebrew](https://brew.sh) | ver site | package manager (macOS) |
+| [GNU Stow](https://www.gnu.org/software/stow/) | `brew install stow` | gerenciador de symlinks |
+| [Nerd Font](https://www.nerdfonts.com/) | ver site | ícones no terminal (p10k + eza) |
+
+### Instaladas via brew
 
 ```bash
-# macOS
-brew install stow
-
-# Ubuntu/Debian
-sudo apt install stow
+brew install \
+  fzf \
+  zoxide \
+  eza \
+  bat \
+  fd \
+  ripgrep \
+  git-delta \
+  direnv \
+  golang \
+  neovim \
+  gnupg
 ```
+
+### Instaladas por outros meios
+
+| Ferramenta | Como instalar | Função |
+|---|---|---|
+| [zinit](https://github.com/zdharma-continuum/zinit) | automático na primeira execução do `.zshrc` | plugin manager do zsh |
+| [Powerlevel10k](https://github.com/romkatv/powerlevel10k) | via zinit (automático) | tema do prompt |
+| [SDKMAN](https://sdkman.io) | `curl -s "https://get.sdkman.io" \| bash` | gerenciador de versões Java/Kotlin |
+
+### Arquivo `~/.ripgreprc`
+
+O ripgrep espera um arquivo de configuração em `$HOME/.ripgreprc`. Crie com:
+
+```
+--smart-case
+--hidden
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!target/*
+--glob=!build/*
+```
+
+### Arquivo `~/.p10k.zsh`
+
+Gerado pelo comando `p10k configure`. Sem ele o prompt carrega sem personalização.
+
+---
 
 ## Instalação
 
@@ -43,7 +85,7 @@ cd ~/dotfiles
 Aplique um pacote específico:
 
 ```bash
-stow zsh       # cria ~/. zshrc -> ~/dotfiles/zsh/.zshrc
+stow zsh
 stow git
 stow nvim
 ```
@@ -80,3 +122,4 @@ stow */
 ## Conteúdo atual
 
 - **zsh** — configuração do shell (`.zshrc`)
+- **wezterm** — configuração do terminal (`.wezterm.lua`)
