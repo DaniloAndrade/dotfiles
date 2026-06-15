@@ -6,7 +6,7 @@ Leader: `Ctrl+Space`
 
 | Atalho | Ação |
 |---|---|
-| `Leader + \|` | Split vertical |
+| `Leader + v` | Split lateral (vertical) |
 | `Leader + -` | Split horizontal |
 | `Leader + h/j/k/l` | Navegar entre painéis |
 | `Leader + z` | Zoom no painel (toggle) |
