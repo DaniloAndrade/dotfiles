@@ -121,7 +121,15 @@ wezterm.on("update-right-status", function(window, pane)
   local workspace = window:active_workspace()
   local time = wezterm.strftime("%H:%M")
 
-  window:set_left_status(wezterm.format({
+  local leader_indicator = ""
+  if window:leader_is_active() then
+    leader_indicator = wezterm.format({
+      { Foreground = { Color = "#FFE073" } },
+      { Text = " LEADER " },
+    })
+  end
+
+  window:set_left_status(leader_indicator .. wezterm.format({
     { Foreground = { Color = "#47FF9C" } },
     { Text = " [" .. workspace .. "] " },
   }))
