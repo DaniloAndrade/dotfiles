@@ -89,7 +89,7 @@ config.keys = {
 
 -- Tab bar retro (mais compacto que o fancy)
 config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = false
+config.tab_bar_at_bottom = true
 config.colors.tab_bar = {
   background = "#011423",
   active_tab = {
