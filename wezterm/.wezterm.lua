@@ -162,4 +162,15 @@ wezterm.on("update-status", function(window, pane)
   }))
 end)
 
+-- [+] abre seletor fuzzy de workspaces (botão direito/meio mantém nova aba)
+wezterm.on("new-tab-button-click", function(window, pane, button, default_action)
+  if button == "Left" then
+    window:perform_action(
+      wezterm.action.ShowLauncherArgs { flags = "FUZZY|WORKSPACES" },
+      pane
+    )
+    return false
+  end
+end)
+
 return config
