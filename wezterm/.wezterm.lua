@@ -22,8 +22,12 @@ config.window_background_opacity = 0.75
 config.macos_window_background_blur = 10
 config.window_padding = { left = 4, right = 4, top = 4, bottom = 4 }
 
+
+
+
+
 -- Leader key
-config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 
 config.keys = {
   -- Splits
@@ -73,6 +77,14 @@ config.keys = {
   }},
   { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs { flags = "WORKSPACES" } },
   { key = "Tab", mods = "LEADER", action = wezterm.action.SwitchWorkspaceRelative(-1) },
+  { key = "R", mods = "LEADER", action = wezterm.action.PromptInputLine {
+    description = "Renomear workspace:",
+    action = wezterm.action_callback(function(window, pane, line)
+      if line then
+        wezterm.mux.rename_workspace(window:active_workspace(), line)
+      end
+    end),
+  }},
 }
 
 -- Tab bar retro (mais compacto que o fancy)
@@ -115,6 +127,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
   return tab.active_pane.title
 end)
+
 
 -- Status: workspace à esquerda, hora à direita
 wezterm.on("update-right-status", function(window, pane)

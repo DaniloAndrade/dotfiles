@@ -1,6 +1,6 @@
 # WezTerm Keybindings
 
-Leader: `Ctrl+Space`
+Leader: `Ctrl+Space` (timeout: 2s)
 
 ## Painéis
 
@@ -28,4 +28,5 @@ Leader: `Ctrl+Space`
 |---|---|
 | `Leader + S` | Criar/ir para workspace pelo nome |
 | `Leader + s` | Listar workspaces (fuzzy) |
+| `Leader + R` | Renomear workspace atual |
 | `Leader + Tab` | Workspace anterior |
