@@ -129,10 +129,24 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 
--- Status: workspace à esquerda, hora à direita
-wezterm.on("update-right-status", function(window, pane)
-  local workspace = window:active_workspace()
-  local time = wezterm.strftime("%H:%M")
+-- Status: todos os workspaces à esquerda, LEADER + hora à direita
+wezterm.on("update-status", function(window, pane)
+  local workspaces = wezterm.mux.get_workspace_names()
+  local active = window:active_workspace()
+
+  local items = {}
+  for _, name in ipairs(workspaces) do
+    if name == active then
+      table.insert(items, { Background = { Color = "#033259" } })
+      table.insert(items, { Foreground = { Color = "#47FF9C" } })
+    else
+      table.insert(items, { Background = { Color = "#011423" } })
+      table.insert(items, { Foreground = { Color = "#214969" } })
+    end
+    table.insert(items, { Text = " " .. name .. " " })
+  end
+
+  window:set_left_status(wezterm.format(items))
 
   local leader_indicator = ""
   if window:leader_is_active() then
@@ -142,14 +156,9 @@ wezterm.on("update-right-status", function(window, pane)
     })
   end
 
-  window:set_left_status(leader_indicator .. wezterm.format({
-    { Foreground = { Color = "#47FF9C" } },
-    { Text = " [" .. workspace .. "] " },
-  }))
-
-  window:set_right_status(wezterm.format({
+  window:set_right_status(leader_indicator .. wezterm.format({
     { Foreground = { Color = "#CBE0F0" } },
-    { Text = " " .. time .. " " },
+    { Text = " " .. wezterm.strftime("%H:%M") .. " " },
   }))
 end)
 
