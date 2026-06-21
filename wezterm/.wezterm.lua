@@ -13,7 +13,7 @@ config.colors = {
   selection_fg = "#CBE0F0",
   ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
   brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
-  split = "#214969",
+  split = "#47FF9C",
 }
 
 config.font_size = 19
@@ -21,6 +21,11 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 10
 config.window_padding = { left = 4, right = 4, top = 4, bottom = 4 }
+
+config.inactive_pane_hsb = {
+  saturation = 0.7,
+  brightness = 0.5,
+}
 
 
 
@@ -89,7 +94,7 @@ config.keys = {
 
 -- Tab bar retro (mais compacto que o fancy)
 config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.colors.tab_bar = {
   background = "#011423",
   active_tab = {
