@@ -57,7 +57,7 @@ after-delay = { enable = true, timeout = 3000 }
 x = ":buffer-close"
 w = ":write"
 q = ":quit"
-g = ":sh bash -c 'wezterm cli split-pane --vertical --percent 40 -- lazygit'"
+g = ":sh bash -c 'wezterm cli split-pane --right --percent 40 -- lazygit'"
 
 [keys.select]
 # Replica as chaves e seleção de linha no modo de seleção
