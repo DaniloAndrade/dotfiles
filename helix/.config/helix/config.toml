@@ -1,0 +1,73 @@
+theme = "jetbrains_dark"
+
+[editor]
+line-number = "relative" # Essencial para pular linhas rapidamente no modelo modal
+cursorline = true        # Destaca visualmente a linha atual
+color-modes = true       # Altera a cor do background do statusline baseado no modo (Normal/Insert/Select)
+bufferline = "multiple"  # Mostra buffers abertos no topo apenas se houver mais de um
+auto-format = true       # Format-on-save global usando o LSP da linguagem
+rulers = [80, 120]       # Guias visuais para manter a legibilidade do código
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"       # Feedback visual claro de que você está digitando
+select = "underline"
+
+[editor.file-picker]
+hidden = false    # Garante que arquivos como .env ou .gitignore apareçam no Space+f
+git-ignore = true # Respeita o seu .gitignore para não poluir o picker
+
+[editor.indent-guides]
+render = true
+character = "╎" # Linhas sutis para guiar escopos em blocos grandes de código
+skip-levels = 1
+
+[editor.lsp]
+display-messages = true    # Mostra mensagens de inicialização do LSP no rodapé
+display-inlay-hints = true # Mostra assinaturas de tipo inline (fantástico para Rust/TS)
+
+[editor.inline-diagnostics]
+cursor-line = "error" # Exibe erros de diagnóstico inline apenas na linha onde o cursor está (evita poluição visual)
+
+[editor.auto-save]
+focus-lost = true
+after-delay = { enable = true, timeout = 3000 }
+
+
+[keys.normal]
+# Navegação rápida entre buffers (Abas) abertos
+"C-," = "goto_previous_buffer"
+"C-." = "goto_next_buffer"
+
+# Fechar buffers e salvar rápido com atalhos de uma tecla no modo Space
+
+# Centralizar a tela ao rolar páginas (previne desorientação)
+"C-d" = ["half_page_down", "goto_window_center"]
+"C-u" = ["half_page_up", "goto_window_center"]
+
+# Correção ergonômica para seleção de linhas inteiras (padrão do Helix é um pouco estranho)
+"x" = "select_line_below"
+"X" = "select_line_above"
+
+# Pular parágrafos rapidamente usando chaves (comportamento clássico do Vim)
+"}" = "goto_next_paragraph"
+"{" = "goto_prev_paragraph"
+
+[keys.normal.space]
+x = ":buffer-close"
+w = ":write"
+q = ":quit"
+g = ":sh bash -c 'wezterm cli split-pane --vertical --percent 40 -- lazygit'"
+
+[keys.select]
+# Replica as chaves e seleção de linha no modo de seleção
+"}" = "goto_next_paragraph"
+"{" = "goto_prev_paragraph"
+"x" = "select_line_below"
+"X" = "select_line_above"
+
+[keys.insert]
+# Sair do modo insert com "fj" (evita esticar o dedo até o Esc)
+"f" = { "j" = "normal_mode" }
+# Atalho clássico de IDE para engatilhar o autocomplete manualmente se necessário
+"C-space" = "completion"

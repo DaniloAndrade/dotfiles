@@ -1,0 +1,111 @@
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt", args = ["--edition", "2021"] }
+auto-format = true
+
+[language.debugger]
+name = "lldb-dap"
+transport = "stdio"
+command = "/opt/homebrew/opt/llvm/bin/lldb-dap"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [{ name = "binary", completion = "filename" }]
+args = { program = "{0}" }
+
+[[language]]
+name = "dockerfile"
+
+[[language]]
+name = "sql"
+language-servers = ["sqls"]
+formatter = { command = "sql-formatter" }
+auto-format = true
+
+[language-server.sqls]
+command = "/Users/danilosandrade/go/bin/sqls"
+
+[[language]]
+name = "bash"
+formatter = { command = "shfmt" }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ["--parser", "json"] }
+auto-format = true
+
+[[language]]
+name = "yaml"
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+auto-format = true
+
+[[language]]
+name = "css"
+formatter = { command = "prettier", args = ["--parser", "css"] }
+auto-format = true
+
+[[language]]
+name = "html"
+formatter = { command = "prettier", args = ["--parser", "html"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+auto-format = true
+
+[[language]]
+name = "lua"
+formatter = { command = "stylua", args = ["-"] }
+auto-format = true
+
+[[language]]
+name = "go"
+formatter = { command = "goimports" }
+auto-format = true
+
+[[language]]
+name = "kotlin"
+formatter = { command = "ktlint", args = ["--stdin", "--format"] }
+auto-format = true
+
+[[language]]
+name = "java"
+formatter = { command = "google-java-format", args = ["-"]}
+auto-format = true
+
+[language.debugger]
+name = "java-debug"
+transport = "tcp"
+command = "jdtls"
+port-arg = "--debug-server-port {}"
+
+[[language.debugger.templates]]
+name = "attach"
+request = "attach"
+completion = [{ name = "port", completion = "string", default = "5005" }]
+args = { hostName = "localhost", port = "{0}" }
+
+
+[language-server.jdtls]
+command = "jdtls"
+args = [
+  "--jvm-arg=-javaagent:/Users/danilosandrade/.config/helix/java-debug.jar"
+]
