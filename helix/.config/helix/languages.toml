@@ -6,7 +6,8 @@ auto-format = true
 [language.debugger]
 name = "lldb-dap"
 transport = "stdio"
-command = "/opt/homebrew/opt/llvm/bin/lldb-dap"
+command = "sh"
+args = ["-c", "exec \"$(brew --prefix llvm)/bin/lldb-dap\""]
 
 [[language.debugger.templates]]
 name = "binary"
