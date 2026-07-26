@@ -128,4 +128,4 @@ stow */
 
 - **zsh** — configuração do shell (`.zshrc`)
 - **wezterm** — configuração do terminal (`.wezterm.lua`)
-- **helix** — configuração do editor (`config.toml`, `languages.toml`)
+- **helix** — configuração do editor (`config.toml`, `languages.toml`). Veja [helix/README.md](helix/README.md) (LSPs, formatters e debuggers) e [helix/CONFIG.md](helix/CONFIG.md) (customizações do `config.toml`)
