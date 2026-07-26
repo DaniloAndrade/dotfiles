@@ -13,10 +13,15 @@ dotfiles/
 ├── git/
 │   ├── .gitconfig
 │   └── .gitignore_global
-└── nvim/
+├── nvim/
+│   └── .config/
+│       └── nvim/
+│           └── init.lua
+└── helix/
     └── .config/
-        └── nvim/
-            └── init.lua
+        └── helix/
+            ├── config.toml
+            └── languages.toml
 ```
 
 ## Pré-requisitos
@@ -123,3 +128,4 @@ stow */
 
 - **zsh** — configuração do shell (`.zshrc`)
 - **wezterm** — configuração do terminal (`.wezterm.lua`)
+- **helix** — configuração do editor (`config.toml`, `languages.toml`)
