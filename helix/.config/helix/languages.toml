@@ -106,7 +106,5 @@ args = { hostName = "localhost", port = "{0}" }
 
 
 [language-server.jdtls]
-command = "jdtls"
-args = [
-  "--jvm-arg=-javaagent:/Users/danilosandrade/.config/helix/java-debug.jar"
-]
+command = "sh"
+args = ["-c", "exec jdtls \"--jvm-arg=-javaagent:$HOME/.config/helix/java-debug.jar\""]
