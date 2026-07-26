@@ -24,7 +24,7 @@ formatter = { command = "sql-formatter" }
 auto-format = true
 
 [language-server.sqls]
-command = "/Users/danilosandrade/go/bin/sqls"
+command = "sqls"
 
 [[language]]
 name = "bash"
