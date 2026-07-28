@@ -1,0 +1,96 @@
+# Tema derivado da paleta "coolnight" do WezTerm (wezterm/.wezterm.lua).
+# Estrutura baseada no tema builtin ayu_dark.
+
+# Sintaxe
+"type" = "blue"
+"type.builtin" = "blue"
+"constructor" = "purple"
+"constant" = "purple"
+"constant.builtin" = "purple"
+"constant.numeric" = "purple"
+"string" = "green"
+"string.regexp" = "cyan"
+"string.special" = "cyan"
+"comment" = { fg = "muted", modifiers = ["italic"] }
+"variable" = "fg"
+"variable.builtin" = "blue"
+"variable.other.member" = "fg"
+"label" = "yellow"
+"punctuation" = "fg"
+"keyword" = "red"
+"keyword.control" = "purple"
+"keyword.directive" = "purple"
+"operator" = "cyan"
+"function" = "yellow"
+"function.macro" = "purple"
+"tag" = "blue"
+"namespace" = "blue"
+
+"markup.heading" = { fg = "blue", modifiers = ["bold"] }
+"markup.list" = "yellow"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.raw" = "green"
+"markup.link.url" = { fg = "blue", underline = { style = "line" } }
+"markup.link.text" = "yellow"
+"markup.link.label" = "purple"
+"markup.quote" = { fg = "muted", modifiers = ["italic"] }
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+"special" = "cyan"
+
+# Interface
+"ui.background" = { fg = "fg" }
+"ui.cursor" = { fg = "bg", bg = "accent_green" }
+"ui.cursor.primary" = { fg = "bg", bg = "accent_green" }
+"ui.cursor.match" = "yellow"
+"ui.linenr" = "muted"
+"ui.linenr.selected" = "fg"
+"ui.statusline" = { fg = "fg", bg = "surface" }
+"ui.statusline.normal" = { fg = "bg", bg = "accent_green", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "blue", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "purple", modifiers = ["bold"] }
+"ui.statusline.inactive" = { fg = "muted", bg = "surface" }
+"ui.cursorline.primary" = { bg = "surface" }
+"ui.popup" = { fg = "fg", bg = "surface" }
+"ui.window" = "muted"
+"ui.help" = { fg = "fg", bg = "surface" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "fg", bg = "surface" }
+"ui.virtual.whitespace" = "muted"
+"ui.virtual.ruler" = { bg = "surface" }
+"ui.virtual.indent-guide" = "muted"
+"ui.virtual.inlay-hint" = { fg = "muted", bg = "surface" }
+"ui.menu" = { fg = "fg", bg = "surface" }
+"ui.menu.selected" = { fg = "bg", bg = "accent_green" }
+"ui.selection" = { bg = "surface" }
+"ui.bufferline" = { fg = "muted", bg = "bg" }
+"ui.bufferline.active" = { fg = "fg", bg = "surface" }
+
+"warning" = "yellow"
+"error" = { fg = "red", modifiers = ["bold"] }
+"info" = { fg = "blue", modifiers = ["bold"] }
+"hint" = { fg = "green", modifiers = ["bold"] }
+"diagnostic.hint" = { underline = { color = "green", style = "curl" } }
+"diagnostic.info" = { underline = { color = "blue", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+[palette]
+bg = "#011423"
+fg = "#CBE0F0"
+surface = "#033259"
+muted = "#214969"
+red = "#E52E2E"
+green = "#44FFB1"
+accent_green = "#47FF9C"
+yellow = "#FFE073"
+blue = "#0FC5ED"
+purple = "#A277FF"
+cyan = "#24EAF7"
