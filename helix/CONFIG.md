@@ -20,10 +20,10 @@ configurados no WezTerm.
 
 | Nome na paleta | Hex | Origem no WezTerm | Uso principal |
 |---|---|---|---|
-| `bg` | `#011423` | `background` | Base (não aplicada — fundo transparente) |
+| `bg` | `#011423` | `background` | Fg do cursor e das statuslines coloridas por modo; bg fixo do bufferline (não transparente, para manter a "aba" sólida como no WezTerm) |
 | `fg` | `#CBE0F0` | `foreground` | Texto padrão |
 | `surface` | `#033259` | `selection_bg` | Statusline, popups, menu, seleção de texto |
-| `muted` | `#214969` | `ansi[1]` (black) | Comentários, números de linha, elementos secundários |
+| `muted` | `#214969` | `ansi[1]` (black) | Elementos de chrome sutis (borda de janela, whitespace, indent-guide), cursorline e ruler |
 | `red` | `#E52E2E` | `ansi[2]` (red) | Keywords, erros |
 | `green` | `#44FFB1` | `ansi[3]` (green) | Strings, hints |
 | `accent_green` | `#47FF9C` | `cursor_bg` / `split` | Cursor, statusline em modo Normal |
@@ -31,6 +31,8 @@ configurados no WezTerm.
 | `blue` | `#0FC5ED` | `ansi[5]` (blue) | Tipos, tags, statusline em modo Insert |
 | `purple` | `#A277FF` | `ansi[6]` (magenta) | Constantes, keyword.control, statusline em modo Select |
 | `cyan` | `#24EAF7` | `ansi[7]`/`ansi[8]` (cyan/white) | Operadores, regex, strings especiais |
+
+Texto secundário (comentários, números de linha, inlay hints, statusline/bufferline inativos) usa `fg` com o modifier `dim` do Helix em vez de uma cor fixa — evita adicionar um 12º tom fora da paleta do WezTerm enquanto mantém contraste aceitável (o `muted` puro, a ~1.4-2:1 de contraste contra o fundo, é ilegível como cor de texto contínuo).
 
 Spec completa: `docs/superpowers/specs/2026-07-28-helix-coolnight-theme-design.md`.
 
