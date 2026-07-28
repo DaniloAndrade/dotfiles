@@ -11,7 +11,7 @@
 "string" = "green"
 "string.regexp" = "cyan"
 "string.special" = "cyan"
-"comment" = { fg = "muted", modifiers = ["italic"] }
+"comment" = { fg = "fg", modifiers = ["dim", "italic"] }
 "variable" = "fg"
 "variable.builtin" = "blue"
 "variable.other.member" = "fg"
@@ -35,7 +35,7 @@
 "markup.link.url" = { fg = "blue", underline = { style = "line" } }
 "markup.link.text" = "yellow"
 "markup.link.label" = "purple"
-"markup.quote" = { fg = "muted", modifiers = ["italic"] }
+"markup.quote" = { fg = "fg", modifiers = ["dim", "italic"] }
 
 "diff.plus" = "green"
 "diff.minus" = "red"
@@ -47,28 +47,28 @@
 "ui.background" = { fg = "fg" }
 "ui.cursor" = { fg = "bg", bg = "accent_green" }
 "ui.cursor.primary" = { fg = "bg", bg = "accent_green" }
-"ui.cursor.match" = "yellow"
-"ui.linenr" = "muted"
+"ui.cursor.match" = { fg = "cyan", modifiers = ["bold"] }
+"ui.linenr" = { fg = "fg", modifiers = ["dim"] }
 "ui.linenr.selected" = "fg"
 "ui.statusline" = { fg = "fg", bg = "surface" }
 "ui.statusline.normal" = { fg = "bg", bg = "accent_green", modifiers = ["bold"] }
 "ui.statusline.insert" = { fg = "bg", bg = "blue", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "bg", bg = "purple", modifiers = ["bold"] }
-"ui.statusline.inactive" = { fg = "muted", bg = "surface" }
-"ui.cursorline.primary" = { bg = "surface" }
+"ui.statusline.inactive" = { fg = "fg", modifiers = ["dim"], bg = "surface" }
+"ui.cursorline.primary" = { bg = "muted" }
 "ui.popup" = { fg = "fg", bg = "surface" }
 "ui.window" = "muted"
 "ui.help" = { fg = "fg", bg = "surface" }
 "ui.text" = "fg"
 "ui.text.focus" = { fg = "fg", bg = "surface" }
 "ui.virtual.whitespace" = "muted"
-"ui.virtual.ruler" = { bg = "surface" }
+"ui.virtual.ruler" = { bg = "muted" }
 "ui.virtual.indent-guide" = "muted"
-"ui.virtual.inlay-hint" = { fg = "muted", bg = "surface" }
+"ui.virtual.inlay-hint" = { fg = "fg", modifiers = ["dim"], bg = "surface" }
 "ui.menu" = { fg = "fg", bg = "surface" }
 "ui.menu.selected" = { fg = "bg", bg = "accent_green" }
 "ui.selection" = { bg = "surface" }
-"ui.bufferline" = { fg = "muted", bg = "bg" }
+"ui.bufferline" = { fg = "fg", modifiers = ["dim"], bg = "bg" }
 "ui.bufferline.active" = { fg = "fg", bg = "surface" }
 
 "warning" = "yellow"
