@@ -57,6 +57,7 @@ after-delay = { enable = true, timeout = 3000 }
 x = ":buffer-close"
 w = ":write"
 q = ":quit"
+u = ":reload" # Recarrega o buffer do disco (não há auto-reload nativo no Helix)
 g = ":sh bash -c 'wezterm cli split-pane --right --percent 40 -- lazygit'"
 
 [keys.select]
