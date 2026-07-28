@@ -10,7 +10,29 @@ clareza, não por necessidade.
 
 | Opção | Valor | Efeito |
 |---|---|---|
-| `theme` | `"jetbrains_dark"` | Tema de cores escuro inspirado no JetBrains IDEs. Vem embutido no Helix (`runtime/themes/jetbrains_dark.toml`), não precisa instalar nada. |
+| `theme` | `"coolnight"` | Tema customizado (`themes/coolnight.toml`, neste pacote) com a mesma paleta de cores usada no WezTerm (`wezterm/.wezterm.lua`) — editor e terminal com a mesma identidade visual. |
+
+### Paleta `coolnight`
+
+Cores extraídas 1:1 de `wezterm/.wezterm.lua` (`config.colors`). Fundo
+transparente (`ui.background` sem `bg`) para herdar o blur/opacidade já
+configurados no WezTerm.
+
+| Nome na paleta | Hex | Origem no WezTerm | Uso principal |
+|---|---|---|---|
+| `bg` | `#011423` | `background` | Base (não aplicada — fundo transparente) |
+| `fg` | `#CBE0F0` | `foreground` | Texto padrão |
+| `surface` | `#033259` | `selection_bg` | Statusline, popups, menu, seleção de texto |
+| `muted` | `#214969` | `ansi[1]` (black) | Comentários, números de linha, elementos secundários |
+| `red` | `#E52E2E` | `ansi[2]` (red) | Keywords, erros |
+| `green` | `#44FFB1` | `ansi[3]` (green) | Strings, hints |
+| `accent_green` | `#47FF9C` | `cursor_bg` / `split` | Cursor, statusline em modo Normal |
+| `yellow` | `#FFE073` | `ansi[4]` (yellow) | Funções, labels, warnings |
+| `blue` | `#0FC5ED` | `ansi[5]` (blue) | Tipos, tags, statusline em modo Insert |
+| `purple` | `#A277FF` | `ansi[6]` (magenta) | Constantes, keyword.control, statusline em modo Select |
+| `cyan` | `#24EAF7` | `ansi[7]`/`ansi[8]` (cyan/white) | Operadores, regex, strings especiais |
+
+Spec completa: `docs/superpowers/specs/2026-07-28-helix-coolnight-theme-design.md`.
 
 ## `[editor]`
 
