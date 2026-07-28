@@ -1,4 +1,4 @@
-theme = "jetbrains_dark"
+theme = "coolnight"
 
 [editor]
 line-number = "relative" # Essencial para pular linhas rapidamente no modelo modal
