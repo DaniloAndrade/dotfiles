@@ -39,6 +39,9 @@ after-delay = { enable = true, timeout = 3000 }
 "C-," = "goto_previous_buffer"
 "C-." = "goto_next_buffer"
 
+# Salvar estilo IDE (Cmd+S) sem sair do modo normal
+"Cmd-s" = ":write"
+
 # Fechar buffers e salvar rápido com atalhos de uma tecla no modo Space
 
 # Centralizar a tela ao rolar páginas (previne desorientação)
@@ -59,6 +62,11 @@ w = ":write"
 q = ":quit"
 u = ":reload" # Recarrega o buffer do disco (não há auto-reload nativo no Helix)
 g = ":sh bash -c 'wezterm cli split-pane --right --percent 40 -- lazygit'"
+t = ":sh bash -c 'wezterm cli split-pane --bottom --percent 30'" # Terminal solto num painel horizontal
+
+# "space g" foi tomado pelo lazygit acima, então o changed-file picker
+# original do Helix (git) fica exposto aqui em "space v" (version control)
+v = "changed_file_picker"
 
 [keys.select]
 # Replica as chaves e seleção de linha no modo de seleção
@@ -72,3 +80,5 @@ g = ":sh bash -c 'wezterm cli split-pane --right --percent 40 -- lazygit'"
 "f" = { "j" = "normal_mode" }
 # Atalho clássico de IDE para engatilhar o autocomplete manualmente se necessário
 "C-space" = "completion"
+# Salvar sem precisar sair do insert mode primeiro
+"Cmd-s" = ":write"

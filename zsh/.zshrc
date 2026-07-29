@@ -29,6 +29,10 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export GPG_TTY=$(tty)
 #
 
+# Editor padrão (usado por git, yazi, crontab -e, etc.)
+export EDITOR=hx
+export VISUAL=hx
+
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
