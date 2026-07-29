@@ -20,10 +20,10 @@ configurados no WezTerm.
 
 | Nome na paleta | Hex | Origem no WezTerm | Uso principal |
 |---|---|---|---|
-| `bg` | `#011423` | `background` | Fg do cursor e das statuslines coloridas por modo; bg fixo do bufferline (não transparente, para manter a "aba" sólida como no WezTerm) |
+| `bg` | `#011423` | `background` | Fg do cursor e das statuslines coloridas por modo; bg fixo do bufferline (não transparente, para manter a "aba" sólida como no WezTerm); bg da linha do cursor (praticamente invisível, de propósito — ver nota abaixo) |
 | `fg` | `#CBE0F0` | `foreground` | Texto padrão |
 | `surface` | `#033259` | `selection_bg` | Statusline, popups, menu, seleção de texto |
-| `muted` | `#214969` | `ansi[1]` (black) | Elementos de chrome sutis (borda de janela, whitespace, indent-guide), cursorline e ruler |
+| `muted` | `#214969` | `ansi[1]` (black) | Elementos de chrome sutis (borda de janela, whitespace, indent-guide) e ruler |
 | `red` | `#E52E2E` | `ansi[2]` (red) | Keywords, erros |
 | `green` | `#44FFB1` | `ansi[3]` (green) | Strings, hints |
 | `accent_green` | `#47FF9C` | `cursor_bg` / `split` | Cursor, statusline em modo Normal |
@@ -33,6 +33,8 @@ configurados no WezTerm.
 | `cyan` | `#24EAF7` | `ansi[7]`/`ansi[8]` (cyan/white) | Operadores, regex, strings especiais |
 
 Texto secundário (comentários, números de linha, inlay hints, statusline/bufferline inativos) usa `fg` com o modifier `dim` do Helix em vez de uma cor fixa — evita adicionar um 12º tom fora da paleta do WezTerm enquanto mantém contraste aceitável (o `muted` puro, a ~1.4-2:1 de contraste contra o fundo, é ilegível como cor de texto contínuo).
+
+`ui.cursorline.primary` usa `bg` (a mesma cor do fundo) em vez de `muted`: o Helix não suporta opacidade/alpha em cores de tema, então dentro da paleta fixa não existe um tom "entre" `bg` e `muted` para sinalizar a linha atual sem competir visualmente com a seleção de texto (`surface`) — que usa uma cor bem próxima de `muted` em brilho. Deixar a linha do cursor quase transparente resolve isso: a posição do cursor continua marcada pelo número de linha relativo (destacado em `fg`) e pelo cursor em bloco (`accent_green`), e a seleção passa a ser o único destaque preenchido na tela.
 
 Spec completa: `docs/superpowers/specs/2026-07-28-helix-coolnight-theme-design.md`.
 
