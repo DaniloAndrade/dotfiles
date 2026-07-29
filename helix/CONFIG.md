@@ -20,10 +20,10 @@ configurados no WezTerm.
 
 | Nome na paleta | Hex | Origem no WezTerm | Uso principal |
 |---|---|---|---|
-| `bg` | `#011423` | `background` | Fg do cursor e das statuslines coloridas por modo; bg fixo do bufferline (não transparente, para manter a "aba" sólida como no WezTerm); bg da linha do cursor (praticamente invisível, de propósito — ver nota abaixo) |
+| `bg` | `#011423` | `background` | Fg do cursor e das statuslines coloridas por modo; bg fixo do bufferline (não transparente, para manter a "aba" sólida como no WezTerm) |
 | `fg` | `#CBE0F0` | `foreground` | Texto padrão |
 | `surface` | `#033259` | `selection_bg` | Statusline, popups, menu, seleção de texto |
-| `muted` | `#214969` | `ansi[1]` (black) | Elementos de chrome sutis (borda de janela, whitespace, indent-guide) e ruler |
+| `muted` | `#214969` | `ansi[1]` (black) | Elementos de chrome sutis (borda de janela, whitespace, indent-guide), ruler e sublinhado da linha do cursor |
 | `red` | `#E52E2E` | `ansi[2]` (red) | Keywords, erros |
 | `green` | `#44FFB1` | `ansi[3]` (green) | Strings, hints |
 | `accent_green` | `#47FF9C` | `cursor_bg` / `split` | Cursor, statusline em modo Normal |
@@ -34,7 +34,7 @@ configurados no WezTerm.
 
 Texto secundário (comentários, números de linha, inlay hints, statusline/bufferline inativos) usa `fg` com o modifier `dim` do Helix em vez de uma cor fixa — evita adicionar um 12º tom fora da paleta do WezTerm enquanto mantém contraste aceitável (o `muted` puro, a ~1.4-2:1 de contraste contra o fundo, é ilegível como cor de texto contínuo).
 
-`ui.cursorline.primary` usa `bg` (a mesma cor do fundo) em vez de `muted`: o Helix não suporta opacidade/alpha em cores de tema, então dentro da paleta fixa não existe um tom "entre" `bg` e `muted` para sinalizar a linha atual sem competir visualmente com a seleção de texto (`surface`) — que usa uma cor bem próxima de `muted` em brilho. Deixar a linha do cursor quase transparente resolve isso: a posição do cursor continua marcada pelo número de linha relativo (destacado em `fg`) e pelo cursor em bloco (`accent_green`), e a seleção passa a ser o único destaque preenchido na tela.
+`ui.cursorline.primary` usa `underline` (sublinhado em `muted`) em vez de `bg`: o Helix só suporta canal alfa (`#rrggbbaa`) pré-misturando a cor contra uma referência fixa antes de mandar pro terminal — não é transparência real, então com `ui.background` sem `bg` (fundo herdado do blur do WezTerm) qualquer `bg` sólido na linha do cursor vira uma barra opaca competindo com a seleção de texto (`surface`). Um sublinhado não preenche fundo nenhum, mantendo a transparência de verdade — mesma técnica usada pelo tema builtin `base16_transparent` do próprio Helix para esse cenário. A posição do cursor continua marcada pelo número de linha relativo (`fg`) e pelo cursor em bloco (`accent_green`), e a seleção passa a ser o único destaque preenchido na tela.
 
 Spec completa: `docs/superpowers/specs/2026-07-28-helix-coolnight-theme-design.md`.
 

@@ -55,7 +55,7 @@
 "ui.statusline.insert" = { fg = "bg", bg = "blue", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "bg", bg = "purple", modifiers = ["bold"] }
 "ui.statusline.inactive" = { fg = "fg", modifiers = ["dim"], bg = "surface" }
-"ui.cursorline.primary" = { bg = "bg" }
+"ui.cursorline.primary" = { underline = { color = "muted", style = "line" } }
 "ui.popup" = { fg = "fg", bg = "surface" }
 "ui.window" = "muted"
 "ui.help" = { fg = "fg", bg = "surface" }
