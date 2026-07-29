@@ -67,7 +67,7 @@
 "ui.virtual.inlay-hint" = { fg = "fg", modifiers = ["dim"], bg = "surface" }
 "ui.menu" = { fg = "fg", bg = "surface" }
 "ui.menu.selected" = { fg = "bg", bg = "accent_green" }
-"ui.selection" = { bg = "surface" }
+"ui.selection" = { bg = "bg" }
 "ui.bufferline" = { fg = "fg", modifiers = ["dim"], bg = "bg" }
 "ui.bufferline.active" = { fg = "fg", bg = "surface" }
 
