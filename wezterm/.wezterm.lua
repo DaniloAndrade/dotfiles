@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local chord = wezterm.plugin.require("https://github.com/sravioli/chord.wz")
 
 local config = wezterm.config_builder()
 
@@ -39,21 +40,21 @@ config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 
 config.keys = {
   -- Splits
-  { key = "v", mods = "LEADER", action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = "-", mods = "LEADER", action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = "v", mods = "LEADER", action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }, desc = "split horizontal" },
+  { key = "-", mods = "LEADER", action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }, desc = "split vertical" },
   -- Navegação entre painéis
-  { key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left") },
-  { key = "j", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Down") },
-  { key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up") },
-  { key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right") },
+  { key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left"), desc = "painel à esquerda" },
+  { key = "j", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Down"), desc = "painel abaixo" },
+  { key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up"), desc = "painel acima" },
+  { key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right"), desc = "painel à direita" },
   -- Ações de painel
-  { key = "x", mods = "LEADER", action = wezterm.action.CloseCurrentPane { confirm = true } },
-  { key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
+  { key = "x", mods = "LEADER", action = wezterm.action.CloseCurrentPane { confirm = true }, desc = "fechar painel" },
+  { key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState, desc = "zoom no painel" },
   -- Abas
-  { key = "c", mods = "LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
-  { key = "n", mods = "LEADER", action = wezterm.action.ActivateTabRelative(1) },
-  { key = "p", mods = "LEADER", action = wezterm.action.ActivateTabRelative(-1) },
-  { key = ",", mods = "LEADER", action = wezterm.action.PromptInputLine {
+  { key = "c", mods = "LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain"), desc = "nova aba" },
+  { key = "n", mods = "LEADER", action = wezterm.action.ActivateTabRelative(1), desc = "próxima aba" },
+  { key = "p", mods = "LEADER", action = wezterm.action.ActivateTabRelative(-1), desc = "aba anterior" },
+  { key = ",", mods = "LEADER", desc = "renomear aba", action = wezterm.action.PromptInputLine {
     description = "Novo nome para a aba:",
     action = wezterm.action_callback(function(window, pane, line)
       if line then
@@ -62,17 +63,17 @@ config.keys = {
     end),
   }},
   -- Ir para aba por número
-  { key = "1", mods = "LEADER", action = wezterm.action.ActivateTab(0) },
-  { key = "2", mods = "LEADER", action = wezterm.action.ActivateTab(1) },
-  { key = "3", mods = "LEADER", action = wezterm.action.ActivateTab(2) },
-  { key = "4", mods = "LEADER", action = wezterm.action.ActivateTab(3) },
-  { key = "5", mods = "LEADER", action = wezterm.action.ActivateTab(4) },
-  { key = "6", mods = "LEADER", action = wezterm.action.ActivateTab(5) },
-  { key = "7", mods = "LEADER", action = wezterm.action.ActivateTab(6) },
-  { key = "8", mods = "LEADER", action = wezterm.action.ActivateTab(7) },
-  { key = "9", mods = "LEADER", action = wezterm.action.ActivateTab(8) },
+  { key = "1", mods = "LEADER", action = wezterm.action.ActivateTab(0), desc = "aba 1" },
+  { key = "2", mods = "LEADER", action = wezterm.action.ActivateTab(1), desc = "aba 2" },
+  { key = "3", mods = "LEADER", action = wezterm.action.ActivateTab(2), desc = "aba 3" },
+  { key = "4", mods = "LEADER", action = wezterm.action.ActivateTab(3), desc = "aba 4" },
+  { key = "5", mods = "LEADER", action = wezterm.action.ActivateTab(4), desc = "aba 5" },
+  { key = "6", mods = "LEADER", action = wezterm.action.ActivateTab(5), desc = "aba 6" },
+  { key = "7", mods = "LEADER", action = wezterm.action.ActivateTab(6), desc = "aba 7" },
+  { key = "8", mods = "LEADER", action = wezterm.action.ActivateTab(7), desc = "aba 8" },
+  { key = "9", mods = "LEADER", action = wezterm.action.ActivateTab(8), desc = "aba 9" },
   -- Workspaces
-  { key = "S", mods = "LEADER", action = wezterm.action.PromptInputLine {
+  { key = "S", mods = "LEADER", desc = "novo workspace", action = wezterm.action.PromptInputLine {
     description = "Nome do novo workspace:",
     action = wezterm.action_callback(function(window, pane, line)
       if line then
@@ -83,9 +84,9 @@ config.keys = {
       end
     end),
   }},
-  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs { flags = "WORKSPACES" } },
-  { key = "Tab", mods = "LEADER", action = wezterm.action.SwitchWorkspaceRelative(-1) },
-  { key = "R", mods = "LEADER", action = wezterm.action.PromptInputLine {
+  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs { flags = "WORKSPACES" }, desc = "listar workspaces" },
+  { key = "Tab", mods = "LEADER", action = wezterm.action.SwitchWorkspaceRelative(-1), desc = "trocar workspace" },
+  { key = "R", mods = "LEADER", desc = "renomear workspace", action = wezterm.action.PromptInputLine {
     description = "Renomear workspace:",
     action = wezterm.action_callback(function(window, pane, line)
       if line then
@@ -94,6 +95,13 @@ config.keys = {
     end),
   }},
 }
+
+-- chord.wz: overlay de ajuda com todos os atalhos (LEADER + ?)
+chord.overlay.apply(config, {
+  key = "<leader>?",
+  title = "Atalhos do WezTerm",
+  sources = { "keys" },
+})
 
 -- Tab bar retro (mais compacto que o fancy)
 config.use_fancy_tab_bar = false
