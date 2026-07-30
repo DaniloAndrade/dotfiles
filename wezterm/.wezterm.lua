@@ -16,6 +16,7 @@ config.colors = {
   split = "#47FF9C",
 }
 
+config.enable_kitty_keyboard = true
 config.font_size = 19
 config.window_decorations = "RESIZE"
 config.send_composed_key_when_left_alt_is_pressed = false
