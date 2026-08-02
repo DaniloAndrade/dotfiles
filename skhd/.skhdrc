@@ -10,8 +10,15 @@
 #
 # onde "command" roda via $SHELL -c (segue sintaxe normal de shell).
 #
-# Nenhum bind ativo ainda — exemplos abaixo comentados só pra referência de
-# sintaxe. Descomente/adicione conforme for definindo os atalhos de verdade.
+# Exemplos abaixo comentados só pra referência de sintaxe. Descomente/adicione
+# conforme for definindo os atalhos de verdade.
+
+# trazer o Chrome pra frente
+# "hyper" aqui é modifier keyword nativo do skhd (cmd+shift+alt+ctrl), não tem
+# relação direta com o Hyper do Karabiner — mas como o Caps Lock (via
+# karabiner/) sintetiza esses 4 modifiers juntos ao segurar, o bind dispara
+# normalmente segurando Caps Lock + c.
+hyper - c : open -a "Google Chrome"
 
 # abrir um app
 # cmd - return : open -a "Terminal"
