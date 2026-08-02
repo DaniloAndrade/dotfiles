@@ -175,6 +175,36 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "description": "Caps Lock — Esc (tap) / Hyper (hold)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
+                                "to_if_alone": [{ "key_code": "escape", "halt": true }],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                    }
+                                ],
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "escape" }] },
+                                "parameters": {
+                                    "basic.to_if_held_down_threshold_milliseconds": 200,
+                                    "basic.to_delayed_action_delay_milliseconds": 200
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            { "is_built_in_keyboard": true },
+                                            { "vendor_id": 1452, "product_id": 591, "is_keyboard": true }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }
