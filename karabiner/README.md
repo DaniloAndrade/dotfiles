@@ -21,6 +21,14 @@ regras importadas futuramente pela UI do Karabiner.
 `automatic_backups/` (gerado automaticamente pelo próprio Karabiner dentro desse diretório) fica
 de fora do git — ver `.gitignore` na raiz do repo.
 
+### App de Settings não recarrega sozinho
+
+O serviço de fundo (`karabiner_console_user_server`, responsável por aplicar os remaps de verdade)
+recarrega o `karabiner.json` automaticamente ao detectar mudança no arquivo. A **janela de Settings**
+do Karabiner-Elements (a UI onde você vê a lista de Complex Modifications) não faz esse reload
+sozinha caso já estivesse aberta antes da edição — se você editar o JSON por fora (ex: via git pull,
+ou manualmente) com o app já aberto, feche e abra o app de novo pra UI mostrar o estado atual.
+
 ## Profiles
 
 - **Default profile** (`selected: true`) — profile ativo no dia a dia, contém as regras de home row
