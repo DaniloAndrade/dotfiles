@@ -129,3 +129,4 @@ stow */
 - **zsh** — configuração do shell (`.zshrc`)
 - **wezterm** — configuração do terminal (`.wezterm.lua`)
 - **helix** — configuração do editor (`config.toml`, `languages.toml`). Veja [helix/README.md](helix/README.md) (LSPs, formatters e debuggers) e [helix/CONFIG.md](helix/CONFIG.md) (customizações do `config.toml`)
+- **karabiner** — configuração do [Karabiner-Elements](https://karabiner-elements.pqrs.org/) (`karabiner.json` + `assets/complex_modifications/`, vazio por enquanto). Diferente dos demais pacotes, o Stow symlinka o diretório `~/.config/karabiner` inteiro (não os arquivos individuais) — [conforme a doc oficial](https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/), symlinkar apenas o `karabiner.json` faz o app não detectar mudanças e não recarregar a config automaticamente. Após reestruturar o diretório, reinicie o serviço: `launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server`
