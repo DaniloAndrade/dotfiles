@@ -21,6 +21,8 @@
 # já estiver aberto, em vez de abrir uma segunda instância.
 hyper - c : open -a "Google Chrome"
 hyper - t : open -a "WezTerm"
+hyper - f : open -a "Finder"
+hyper - n : open -a "Notion"
 
 # abrir um app
 # cmd - return : open -a "Terminal"
