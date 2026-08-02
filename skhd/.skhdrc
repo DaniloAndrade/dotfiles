@@ -1,0 +1,23 @@
+# skhd — hotkey daemon config
+# https://github.com/asmvik/skhd
+#
+# Sintaxe completa (modos, application-specific bindings, .load de arquivos
+# parciais, .blacklist etc): https://github.com/koekeishiya/skhd/issues/1
+#
+# Regra básica de um bind:
+#
+#   modifier - key : command
+#
+# onde "command" roda via $SHELL -c (segue sintaxe normal de shell).
+#
+# Nenhum bind ativo ainda — exemplos abaixo comentados só pra referência de
+# sintaxe. Descomente/adicione conforme for definindo os atalhos de verdade.
+
+# abrir um app
+# cmd - return : open -a "Terminal"
+
+# rodar um script
+# cmd + shift - k : ~/bin/algum_script.sh
+
+# encadear comandos (delimitador ";" dentro do comando, sintaxe de shell)
+# cmd + alt - r : echo "reload" ; skhd --reload
