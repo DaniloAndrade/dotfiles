@@ -48,7 +48,8 @@ brew install \
   direnv \
   golang \
   neovim \
-  gnupg
+  gnupg \
+  yazi
 ```
 
 ### Instaladas por outros meios
@@ -126,8 +127,8 @@ stow */
 
 ## Conteúdo atual
 
-- **zsh** — configuração do shell (`.zshrc`)
+- **zsh** — configuração do shell (`.zshrc`). Inclui a função `hx()`: sem argumento, com `.` ou com um diretório, abre o [yazi](https://yazi-rs.github.io) como file picker visual antes de editar; com um arquivo, passa direto pro Helix
 - **wezterm** — configuração do terminal (`.wezterm.lua`)
-- **helix** — configuração do editor (`config.toml`, `languages.toml`). Veja [helix/README.md](helix/README.md) (LSPs, formatters e debuggers) e [helix/CONFIG.md](helix/CONFIG.md) (customizações do `config.toml`)
+- **helix** — configuração do editor (`config.toml`, `languages.toml`). `C-e` no modo normal abre o yazi no diretório do buffer atual e abre o arquivo escolhido. Veja [helix/README.md](helix/README.md) (LSPs, formatters e debuggers) e [helix/CONFIG.md](helix/CONFIG.md) (customizações do `config.toml`)
 - **karabiner** — configuração do [Karabiner-Elements](https://karabiner-elements.pqrs.org/), incluindo home row mods (`a s d f` / `j k l ;` viram cmd/option/ctrl/shift quando segurados) e Caps Lock como Esc (tap) / Hyper (hold), restritos ao teclado nativo e ao Keychron K3. Veja [karabiner/README.md](karabiner/README.md) para o mapeamento completo, o mecanismo de tap-hold usado e o profile "Nativo" (kill switch rápido)
 - **skhd** — configuração do [skhd](https://github.com/asmvik/skhd) (`.skhdrc`). Ainda sem binds ativos, só exemplos comentados de sintaxe — uso ainda não decidido (window management via yabai vs. atalhos gerais)
