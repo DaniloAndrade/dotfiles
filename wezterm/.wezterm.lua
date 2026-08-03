@@ -1,6 +1,16 @@
 local wezterm = require("wezterm")
 local chord = wezterm.plugin.require("https://github.com/sravioli/chord.wz")
 
+-- wezterm.plugin.require não tem pin nativo por URL (feature request em
+-- aberto: https://github.com/wezterm/wezterm/issues/6461). No primeiro clone
+-- ele baixa o HEAD do branch default; aqui fixamos manualmente na última tag
+-- estável para não rodar código não revisado.
+for _, plugin in ipairs(wezterm.plugin.list()) do
+  if plugin.url == "https://github.com/sravioli/chord.wz" then
+    wezterm.run_child_process({ "git", "-C", plugin.plugin_dir, "checkout", "--quiet", "1.1.0" })
+  end
+end
+
 local config = wezterm.config_builder()
 
 -- Colorscheme coolnight (mantido)

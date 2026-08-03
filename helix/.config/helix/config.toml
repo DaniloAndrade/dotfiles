@@ -46,11 +46,13 @@ after-delay = { enable = true, timeout = 3000 }
 # O arquivo de troca usa $PPID (PID do próprio Helix) em vez de um nome fixo
 # para não haver corrida entre instâncias abertas ao mesmo tempo. O rm inicial
 # evita reabrir uma seleção antiga se o yazi for cancelado sem escolher nada.
+# Usa $TMPDIR (diretório privado por usuário no macOS, modo 700) em vez de
+# /tmp direto, que é compartilhado entre todos os usuários do sistema.
 "C-e" = [
-  ':sh rm -f /tmp/hx-yazi-$PPID',
-  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/hx-yazi-$PPID',
+  ':sh rm -f "${TMPDIR:-/tmp}/hx-yazi-$PPID"',
+  ':insert-output yazi %{buffer_name} --chooser-file="${TMPDIR:-/tmp}/hx-yazi-$PPID"',
   ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
-  ':open %sh{cat /tmp/hx-yazi-$PPID}',
+  ':open %sh{cat "${TMPDIR:-/tmp}/hx-yazi-$PPID"}',
   ':redraw',
 ]
 

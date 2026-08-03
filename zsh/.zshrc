@@ -58,21 +58,23 @@ hx() {
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
+# Pinado em v3.9.0 (release estável mais recente) em vez do HEAD do branch
+# default, para não rodar código não revisado no primeiro clone.
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+  git clone --branch v3.9.0 --depth 1 https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1 ver'v1.9.1'; zinit light romkatv/powerlevel10k
 
-# Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# Add in zsh plugins (pinados em tags estáveis em vez do HEAD do branch default)
+zinit ice ver'0.8.0'; zinit light zsh-users/zsh-syntax-highlighting
+zinit ice ver'0.9.0'; zinit light zsh-users/zsh-completions
+zinit ice ver'v0.7.1'; zinit light zsh-users/zsh-autosuggestions
+zinit ice ver'v1.3.0'; zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZP::git
