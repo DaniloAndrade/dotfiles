@@ -42,6 +42,18 @@ after-delay = { enable = true, timeout = 3000 }
 # Salvar estilo IDE (Cmd+S) sem sair do modo normal
 "Cmd-s" = ":write"
 
+# Abre o yazi como file picker visual a partir do diretório do buffer atual.
+# O arquivo de troca usa $PPID (PID do próprio Helix) em vez de um nome fixo
+# para não haver corrida entre instâncias abertas ao mesmo tempo. O rm inicial
+# evita reabrir uma seleção antiga se o yazi for cancelado sem escolher nada.
+"C-e" = [
+  ':sh rm -f /tmp/hx-yazi-$PPID',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/hx-yazi-$PPID',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/hx-yazi-$PPID}',
+  ':redraw',
+]
+
 # Fechar buffers e salvar rápido com atalhos de uma tecla no modo Space
 
 # Centralizar a tela ao rolar páginas (previne desorientação)

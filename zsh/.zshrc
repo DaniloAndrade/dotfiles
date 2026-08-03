@@ -33,6 +33,28 @@ export GPG_TTY=$(tty)
 export EDITOR=hx
 export VISUAL=hx
 
+# `hx` sem argumento, com "." ou com um diretório abre o yazi para escolher
+# um arquivo antes de editar. Com um arquivo (ou múltiplos argumentos), passa
+# direto pro binário real (git/crontab/etc. sempre chamam $EDITOR com um path
+# de arquivo, então nunca disparam esse fallback).
+hx() {
+  local target="${1:-.}"
+
+  if [ $# -gt 1 ] || { [ $# -eq 1 ] && [ ! -d "$target" ]; }; then
+    command hx "$@"
+    return
+  fi
+
+  local chooser
+  chooser=$(mktemp)
+  yazi "$target" --chooser-file="$chooser"
+
+  if [ -s "$chooser" ]; then
+    command hx "$(cat "$chooser")"
+  fi
+  rm -f "$chooser"
+}
+
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
