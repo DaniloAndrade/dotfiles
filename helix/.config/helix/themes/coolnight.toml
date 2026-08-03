@@ -65,6 +65,7 @@
 "ui.virtual.ruler" = { bg = "muted" }
 "ui.virtual.indent-guide" = { fg = "fg", modifiers = ["dim"] }
 "ui.virtual.inlay-hint" = { fg = "fg", modifiers = ["dim"], bg = "surface" }
+"ui.virtual.jump-label" = { modifiers = ["reversed", "bold"] }
 "ui.menu" = { fg = "fg", bg = "surface" }
 "ui.menu.selected" = { fg = "bg", bg = "accent_green" }
 "ui.selection" = { bg = "surface" }
