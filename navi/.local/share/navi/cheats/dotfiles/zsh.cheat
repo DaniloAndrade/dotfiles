@@ -1,0 +1,27 @@
+% zsh, aliases
+# ll → listar detalhado (eza)
+ll
+
+% zsh, aliases
+# lt → árvore de diretórios (2 níveis)
+lt
+
+% zsh, aliases
+# ls → listar com ícones (eza)
+ls
+
+% zsh, aliases
+# c → limpar terminal
+c
+
+% zsh, aliases
+# cat → bat sem pager
+cat
+
+% zsh, keys
+# Ctrl-p / Ctrl-n → buscar histórico pelo prefixo já digitado
+echo "Ctrl-p → history-search-backward | Ctrl-n → history-search-forward"
+
+% zsh, functions
+# hx (sem args ou com diretório) → escolhe arquivo no yazi antes de abrir
+echo "hx [dir] → escolhe arquivo no yazi, abre no Helix | hx <arquivo> → abre direto"

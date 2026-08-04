@@ -1,0 +1,51 @@
+% wezterm, panes
+# Leader (Ctrl+Space) + v → split vertical (lado a lado)
+echo "Leader + v → split vertical"
+
+% wezterm, panes
+# Leader + - → split horizontal
+echo "Leader + - → split horizontal"
+
+% wezterm, panes
+# Leader + h/j/k/l → navegar entre painéis
+echo "Leader + h/j/k/l → mover entre painéis"
+
+% wezterm, panes
+# Leader + z → zoom no painel (toggle)
+echo "Leader + z → toggle zoom no painel"
+
+% wezterm, panes
+# Leader + x → fechar painel
+echo "Leader + x → fechar painel atual"
+
+% wezterm, tabs
+# Leader + c → nova aba
+echo "Leader + c → nova aba"
+
+% wezterm, tabs
+# Leader + n / p → próxima/anterior aba
+echo "Leader + n → próxima aba | Leader + p → aba anterior"
+
+% wezterm, tabs
+# Leader + , → renomear aba
+echo "Leader + , → renomear aba atual"
+
+% wezterm, tabs
+# Leader + 1..9 → ir para aba por número
+echo "Leader + 1..9 → pular direto pra aba N"
+
+% wezterm, workspaces
+# Leader + S → criar/ir para workspace pelo nome
+echo "Leader + S → criar ou ir para workspace pelo nome"
+
+% wezterm, workspaces
+# Leader + s → listar workspaces (fuzzy)
+echo "Leader + s → lista fuzzy de workspaces"
+
+% wezterm, workspaces
+# Leader + R → renomear workspace atual
+echo "Leader + R → renomear workspace atual"
+
+% wezterm, workspaces
+# Leader + Tab → workspace anterior
+echo "Leader + Tab → trocar pro workspace anterior"

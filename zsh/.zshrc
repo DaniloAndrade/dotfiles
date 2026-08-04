@@ -144,6 +144,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(navi widget zsh)"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

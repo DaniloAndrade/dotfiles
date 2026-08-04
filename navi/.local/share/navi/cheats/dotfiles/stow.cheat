@@ -1,0 +1,21 @@
+% stow, dotfiles
+# Aplicar (criar symlinks de) um pacote
+stow <pacote>
+
+% stow, dotfiles
+# Remover os symlinks de um pacote
+stow -D <pacote>
+
+% stow, dotfiles
+# Recriar os symlinks de um pacote (restow)
+stow -R <pacote>
+
+% stow, dotfiles
+# Simular sem aplicar (dry-run, verbose)
+stow -n -v <pacote>
+
+% stow, dotfiles
+# Aplicar todos os pacotes de uma vez
+stow */
+
+$ pacote: ls -d ~/dotfiles/*/ 2>/dev/null | xargs -n1 basename | grep -v '^docs$'

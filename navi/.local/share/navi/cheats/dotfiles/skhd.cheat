@@ -1,0 +1,15 @@
+% skhd, apps
+# hyper+c → abrir/focar Google Chrome
+open -a "Google Chrome"
+
+% skhd, apps
+# hyper+t → abrir/focar WezTerm
+open -a "WezTerm"
+
+% skhd, apps
+# hyper+f → abrir/focar Finder
+open -a "Finder"
+
+% skhd, apps
+# hyper+n → abrir/focar Notion
+open -a "Notion"
