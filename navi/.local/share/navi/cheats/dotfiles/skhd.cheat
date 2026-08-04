@@ -13,3 +13,7 @@ open -a "Finder"
 % skhd
 # hyper+n → abrir/focar Notion
 open -a "Notion"
+
+% skhd
+# hyper+y → abrir/focar YouTube
+open -a "YouTube"

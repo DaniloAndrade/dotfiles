@@ -23,6 +23,7 @@ hyper - c : open -a "Google Chrome"
 hyper - t : open -a "WezTerm"
 hyper - f : open -a "Finder"
 hyper - n : open -a "Notion"
+hyper - y : open -a "YouTube"
 
 # abrir um app
 # cmd - return : open -a "Terminal"
