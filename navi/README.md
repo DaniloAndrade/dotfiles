@@ -9,6 +9,26 @@ Cheats symlinkados direto no destino padrão do navi (`~/.local/share/navi/cheat
 subdiretório `dotfiles/` — assim não mistura com cheatsheets de terceiros importados no futuro via
 `navi repo add`. `config.yaml` fica no destino padrão também (`~/.config/navi/`).
 
+### Por que precisa de no-folding
+
+Diferente dos demais pacotes deste repo, este **precisa** ser stowed com `--no-folding`:
+
+```bash
+stow --no-folding navi
+```
+
+`~/.config/navi/` e `~/.local/share/navi/cheats/` não são exclusivos deste pacote — o próprio navi
+escreve nesses diretórios em runtime (`navi.log`, cache) e `navi repo add` clona cheatsheets de
+terceiros ali dentro. Com stow normal (tree folding), o diretório inteiro vira um symlink pro repo,
+e qualquer coisa que o navi gerar depois cai fisicamente dentro do `~/dotfiles` (foi o que aconteceu
+com um `navi.log` e um cheatsheet de exemplo, limpos numa sessão anterior). `--no-folding` faz o
+Stow criar os diretórios intermediários de verdade no destino e symlinkar só os arquivos que este
+pacote realmente possui — o resto que o navi criar ali fica fora do git, sem risco de poluir o repo.
+
+Necessário só da primeira vez (ou depois de um `stow -D navi` seguido de restow): uma vez que
+`~/.config/navi/` e `~/.local/share/navi/` existem como diretórios reais no destino, um `stow -R
+navi` normal preserva a estrutura sem precisar da flag de novo.
+
 ```
 navi/
 ├── .config/navi/config.yaml

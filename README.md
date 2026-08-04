@@ -103,6 +103,9 @@ Aplique todos os pacotes de uma vez:
 stow */
 ```
 
+**Exceção:** o pacote `navi` precisa de `stow --no-folding navi` em vez de `stow navi` (não entra no
+`stow */` acima) — veja o motivo em [navi/README.md](navi/README.md#por-que-precisa-de-no-folding).
+
 ## Comandos úteis
 
 | Comando | Descrição |
