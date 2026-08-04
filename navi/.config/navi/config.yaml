@@ -1,0 +1,19 @@
+# O client tldr instalado aqui é o tlrc (Rust), que só aceita `--raw` para
+# saída em markdown puro — não tem mais `--markdown`. Por padrão o navi chama
+# `tldr <app> --markdown`, o que quebra `navi --tldr <app>`. Ativar esta opção
+# faz o navi chamar `--raw` em vez disso (funciona tanto pro tealdeer quanto
+# pro tlrc). Ver https://github.com/denisidoro/navi/issues/902
+client:
+  tealdeer: true
+
+# Colunas mais estreitas pra caber no painel de 30% aberto por Option+H
+# (wezterm/.wezterm.lua). Tags agora são só o nome do app (sem subcategoria),
+# então cabem em pouco espaço; sobra mais largura pro snippet, que carrega a
+# informação de verdade nas entradas de referência (karabiner/wezterm/helix).
+style:
+  tag:
+    width_percentage: 16
+    min_width: 10
+  comment:
+    width_percentage: 30
+    min_width: 18

@@ -1,35 +1,35 @@
-% helix, normal
+% helix
 # Ctrl-, / Ctrl-. → buffer anterior/próximo
 echo "Ctrl-, → buffer anterior | Ctrl-. → próximo buffer"
 
-% helix, normal
+% helix
 # Ctrl-d / Ctrl-u → meia página baixo/cima, centralizado
 echo "Ctrl-d → half page down + centraliza | Ctrl-u → half page up + centraliza"
 
-% helix, normal
+% helix
 # x / X → selecionar linha abaixo/acima (preserva âncora da seleção)
 echo "x → select_line_below | X → select_line_above"
 
-% helix, normal
+% helix
 # { / } → parágrafo anterior/próximo
 echo "{ → parágrafo anterior | } → próximo parágrafo"
 
-% helix, normal
+% helix
 # Ctrl-e → abrir yazi como file picker no diretório do buffer atual
 echo "Ctrl-e → yazi no dir do buffer atual, abre o arquivo escolhido"
 
-% helix, space-menu
+% helix
 # Space x/w/q → fechar buffer / salvar / sair
 echo "Space x → buffer-close | Space w → write | Space q → quit"
 
-% helix, space-menu
+% helix
 # Space g → lazygit em painel vertical do WezTerm (40%)
 echo "Space g → abre lazygit num painel vertical sem sair do Helix"
 
-% helix, insert
+% helix
 # fj → sair do modo insert (alternativa ao Esc)
 echo "fj → normal_mode"
 
-% helix, insert
+% helix
 # Ctrl-space → disparar autocomplete manualmente
 echo "Ctrl-space → completion"

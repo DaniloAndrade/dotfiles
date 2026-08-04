@@ -1,20 +1,20 @@
-% stow, dotfiles
+% stow
 # Aplicar (criar symlinks de) um pacote
 stow <pacote>
 
-% stow, dotfiles
+% stow
 # Remover os symlinks de um pacote
 stow -D <pacote>
 
-% stow, dotfiles
+% stow
 # Recriar os symlinks de um pacote (restow)
 stow -R <pacote>
 
-% stow, dotfiles
+% stow
 # Simular sem aplicar (dry-run, verbose)
 stow -n -v <pacote>
 
-% stow, dotfiles
+% stow
 # Aplicar todos os pacotes de uma vez
 stow */
 

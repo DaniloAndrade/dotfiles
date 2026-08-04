@@ -1,39 +1,39 @@
-% karabiner, home-row-mods
+% karabiner
 # a: tap → 'a' | hold (~200ms) → ⌘ left_command
 echo "a hold → ⌘ Cmd | a tap → 'a'"
 
-% karabiner, home-row-mods
+% karabiner
 # s: tap → 's' | hold → ⌥ left_option
 echo "s hold → ⌥ Option | s tap → 's'"
 
-% karabiner, home-row-mods
+% karabiner
 # d: tap → 'd' | hold → ⌃ left_control
 echo "d hold → ⌃ Control | d tap → 'd'"
 
-% karabiner, home-row-mods
+% karabiner
 # f: tap → 'f' | hold → ⇧ left_shift
 echo "f hold → ⇧ Shift | f tap → 'f'"
 
-% karabiner, home-row-mods
+% karabiner
 # j: tap → 'j' | hold → ⇧ right_shift
 echo "j hold → ⇧ Shift (direita) | j tap → 'j'"
 
-% karabiner, home-row-mods
+% karabiner
 # k: tap → 'k' | hold → ⌃ right_control
 echo "k hold → ⌃ Control (direita) | k tap → 'k'"
 
-% karabiner, home-row-mods
+% karabiner
 # l: tap → 'l' | hold → ⌥ right_option
 echo "l hold → ⌥ Option (direita) | l tap → 'l'"
 
-% karabiner, home-row-mods
+% karabiner
 # ;: tap → ';' | hold → ⌘ right_command
 echo "; hold → ⌘ Cmd (direita) | ; tap → ';'"
 
-% karabiner, caps-lock
+% karabiner
 # Caps Lock: tap → Esc | hold (~200ms) → Hyper (⌘⌃⌥⇧)
 echo "Caps Lock tap → Esc | hold → Hyper (Cmd+Ctrl+Opt+Shift)"
 
-% karabiner, profiles
+% karabiner
 # Kill switch: trocar para o profile 'Nativo' (sem remaps) via menu bar
 echo "Menu bar Karabiner → Profiles → Nativo (desliga home row mods e Hyper)"

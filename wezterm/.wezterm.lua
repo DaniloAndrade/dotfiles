@@ -44,7 +44,7 @@ config.inactive_pane_hsb = {
 
 
 
-
+local act = wezterm.action
 -- Leader key
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 
@@ -104,6 +104,36 @@ config.keys = {
       end
     end),
   }},
+
+  -- Abre o navi filtrado pelo app em foreground do pane atual. Tag do navi
+  -- normalmente é o próprio nome do processo (ex: "zsh"); só precisa de
+  -- override aqui quando o binário tem nome diferente da tag usada nos
+  -- .cheat (navi/README.md documenta as tags). Sem match, abre sem filtro.
+  {
+    key = "h",
+    mods = "ALT",
+    action = wezterm.action_callback(function(window, pane)
+      local navi_tag_overrides = { hx = "helix" }
+      local process = pane:get_foreground_process_name() or ""
+      local app_name = process:match("([^/\\]+)$") or ""
+      local query = navi_tag_overrides[app_name] or app_name
+
+      -- Command explícito no SplitPane não passa por shell de login/interativo,
+      -- então PATH fica só o mínimo do sistema (sem /opt/homebrew/bin). `zsh -lic`
+      -- carrega o .zshrc (onde o brew shellenv roda) antes de executar o navi.
+      -- "$1" via positional arg (não concatenação) evita qualquer problema de
+      -- quoting no nome do processo.
+      window:perform_action(
+        act.SplitPane {
+          direction = "Right",
+          size = { Percent = 30 },
+          command = { args = { "zsh", "-lic", 'navi --query "$1"', "_", query } },
+        },
+        pane
+      )
+    end),
+    desc = "navi (cheatsheets do app atual)",
+  },
 }
 
 -- chord.wz: overlay de ajuda com todos os atalhos (LEADER + ?)
