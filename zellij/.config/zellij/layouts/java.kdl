@@ -1,0 +1,40 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="https://github.com/dj95/zjstatus/releases/download/v0.24.0/zjstatus.wasm" {
+                format_left   "{mode} {session} "
+                format_center "{tabs}"
+                format_right  "{datetime}"
+                format_space  "#[bg=#011423]"
+
+                border_enabled             false
+                hide_frame_for_single_pane true
+
+                mode_normal "#[bg=#033259,fg=#47FF9C,bold] {name} "
+                mode_locked "#[bg=#011423,fg=#214969] {name} "
+
+                tab_normal "#[fg=#214969] {name} "
+                tab_active "#[fg=#47FF9C,bold] ▶ {name} "
+
+                datetime        "#[fg=#214969] {format} "
+                datetime_format "%H:%M"
+            }
+        }
+    }
+    tab name=" java" {
+        pane split_direction="vertical" {
+            pane size="15%" {
+                plugin location="zellij:strider"
+            }
+            pane command="hx" {
+                args "."
+            }
+            pane split_direction="horizontal" size="30%" {
+                pane command="lazygit"
+                pane name="ai"
+                pane name="shell"
+            }
+        }
+    }
+}
