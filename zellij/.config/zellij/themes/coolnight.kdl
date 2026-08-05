@@ -1,0 +1,15 @@
+themes {
+    coolnight {
+        fg "#CBE0F0"
+        bg "#011423"
+        black "#214969"
+        red "#E52E2E"
+        green "#47FF9C"
+        yellow "#FFE073"
+        blue "#0FC5ED"
+        magenta "#A277FF"
+        cyan "#24EAF7"
+        white "#CBE0F0"
+        orange "#FFE073"
+    }
+}
