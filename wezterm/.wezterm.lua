@@ -105,6 +105,27 @@ config.keys = {
     end),
   }},
 
+  -- Zellij: entra na sessão do projeto atual (nome = pasta do cwd) se ela já
+  -- existir; senão cai no session-manager nativo do Zellij (welcome screen),
+  -- que deixa escolher nome/layout/folder da nova sessão. SendString em vez de
+  -- spawnar processo via API do WezTerm: mantém o toggle "na aba atual" — sair
+  -- do Zellij (detach/quit, ver navi zellij.cheat) devolve a aba pro shell puro
+  -- sem precisar de nenhum bind de volta.
+  {
+    key = "z",
+    mods = "LEADER",
+    desc = "zellij: attach na sessão do projeto (ou session-manager)",
+    action = wezterm.action_callback(function(window, pane)
+      local cwd_uri = pane:get_current_working_dir()
+      local cwd = cwd_uri and cwd_uri.file_path or os.getenv("HOME")
+      local project = cwd:gsub("/$", ""):match("([^/]+)$") or "zellij"
+      window:perform_action(
+        act.SendString('zellij attach "' .. project .. '" 2>/dev/null || zellij\n'),
+        pane
+      )
+    end),
+  },
+
   -- Abre o navi filtrado pelo app em foreground do pane atual. Tag do navi
   -- normalmente é o próprio nome do processo (ex: "zsh"); só precisa de
   -- override aqui quando o binário tem nome diferente da tag usada nos
