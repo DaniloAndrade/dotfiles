@@ -22,7 +22,7 @@ layout {
             }
         }
     }
-    tab name=" term" {
+    tab name="❯ term" {
         pane split_direction="vertical" {
             pane command="hx" {
                 args "."

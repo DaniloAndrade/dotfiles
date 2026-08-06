@@ -22,7 +22,7 @@ layout {
             }
         }
     }
-    tab name=" java" {
+    tab name="☕ java" {
         pane split_direction="vertical" {
             pane size="15%" {
                 plugin location="zellij:strider"
