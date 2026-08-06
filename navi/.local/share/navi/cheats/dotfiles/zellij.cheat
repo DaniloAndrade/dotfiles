@@ -1,0 +1,24 @@
+% zellij
+# LEADER+e no WezTerm → attach na sessão do projeto atual (ou session-manager se não existir)
+echo "LEADER+e no WezTerm → attach/criar sessão zellij do projeto"
+
+% zellij
+# Ctrl g destrava o modo locked (padrão ao entrar no zellij)
+echo "Ctrl g → destrava o modo locked"
+
+% zellij
+# Ctrl g, depois o, depois d → detach (sessão continua rodando em background)
+echo "Ctrl g → o → d → detach (mantém a sessão viva)"
+
+% zellij
+# Ctrl g, depois Ctrl q → mata a sessão atual
+echo "Ctrl g → Ctrl q → mata a sessão"
+
+% zellij
+# Ctrl g, depois o, depois w → abre o session-manager (trocar/criar sessão)
+echo "Ctrl g → o → w → session-manager (trocar/criar sessão)"
+
+% zellij
+# No welcome screen / session-manager: digite o nome, escolha o layout na lista
+# (rust/go/java/web/default) e opcionalmente o folder com Ctrl+f
+echo "No session-manager: nome → layout (rust/go/java/web/default) → Ctrl+f pro folder"
