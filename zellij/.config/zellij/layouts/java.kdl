@@ -1,23 +1,32 @@
 layout {
     default_tab_template {
-        children
         pane size=1 borderless=true {
             plugin location="https://github.com/dj95/zjstatus/releases/download/v0.24.0/zjstatus.wasm" {
-                format_left   "{mode} {session} "
+                format_left   "#[fg=#47FF9C,bold] {session} "
                 format_center "{tabs}"
-                format_right  "{datetime}"
+                format_right  ""
                 format_space  "#[bg=#011423]"
 
                 border_enabled             false
                 hide_frame_for_single_pane true
 
-                mode_normal "#[bg=#033259,fg=#47FF9C,bold] {name} "
-                mode_locked "#[bg=#011423,fg=#214969] {name} "
-
                 tab_normal "#[fg=#214969] {name} "
-                tab_active "#[fg=#47FF9C,bold] ▶ {name} "
+                tab_active "#[bg=#033259,fg=#47FF9C,bold] ▶ {name} "
+            }
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="https://github.com/dj95/zjstatus/releases/download/v0.24.0/zjstatus.wasm" {
+                format_left   "{mode} "
+                format_center ""
+                format_right  "#[fg=#214969]{datetime} "
+                format_space  "#[bg=#011423]"
 
-                datetime        "#[fg=#214969] {format} "
+                border_enabled false
+
+                mode_normal "#[bg=#033259,fg=#47FF9C,bold] NORMAL "
+                mode_locked "#[bg=#011423,fg=#214969] LOCKED "
+
                 datetime_format "%H:%M"
             }
         }
