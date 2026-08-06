@@ -15,20 +15,8 @@ layout {
             }
         }
         children
-        pane size=1 borderless=true {
-            plugin location="https://github.com/dj95/zjstatus/releases/download/v0.24.0/zjstatus.wasm" {
-                format_left   "{mode} "
-                format_center ""
-                format_right  "#[fg=#214969]{datetime} "
-                format_space  "#[bg=#011423]"
-
-                border_enabled false
-
-                mode_normal "#[bg=#033259,fg=#47FF9C,bold] NORMAL "
-                mode_locked "#[bg=#011423,fg=#214969] LOCKED "
-
-                datetime_format "%H:%M"
-            }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
         }
     }
     tab name="☕ java" {
