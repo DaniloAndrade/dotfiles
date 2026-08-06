@@ -112,7 +112,7 @@ config.keys = {
   -- do Zellij (detach/quit, ver navi zellij.cheat) devolve a aba pro shell puro
   -- sem precisar de nenhum bind de volta.
   {
-    key = "z",
+    key = "e",
     mods = "LEADER",
     desc = "zellij: attach na sessão do projeto (ou session-manager)",
     action = wezterm.action_callback(function(window, pane)
