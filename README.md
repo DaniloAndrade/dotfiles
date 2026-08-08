@@ -105,8 +105,14 @@ Aplique todos os pacotes de uma vez:
 stow */
 ```
 
-**Exceção:** o pacote `navi` precisa de `stow --no-folding navi` em vez de `stow navi` (não entra no
-`stow */` acima) — veja o motivo em [navi/README.md](navi/README.md#por-que-precisa-de-no-folding).
+**Exceção:** os pacotes `navi` e `zellij` precisam de `stow --no-folding` (`stow --no-folding navi`,
+`stow --no-folding zellij`) em vez do `stow */` acima — em ambos os casos o próprio app escreve em
+runtime dentro do diretório que seria foldado. Pro `navi`, veja o motivo em
+[navi/README.md](navi/README.md#por-que-precisa-de-no-folding). Pro `zellij`, é o plugin
+`layout-manager` (`Ctrl g → o → l`) gravando layouts novos em `~/.config/zellij/layouts/` e o plugin
+`configuration` (`Ctrl g → o → c`) reescrevendo `config.kdl` em runtime — com folding normal isso
+cairia direto dentro do repo, e pior, o `configuration` poderia substituir o symlink do `config.kdl`
+por um arquivo real, dessincronizando do repo sem aviso.
 
 ## Comandos úteis
 
@@ -139,4 +145,4 @@ stow */
 - **karabiner** — configuração do [Karabiner-Elements](https://karabiner-elements.pqrs.org/), incluindo home row mods (`a s d f` / `j k l ;` viram cmd/option/ctrl/shift quando segurados) e Caps Lock como Esc (tap) / Hyper (hold), restritos ao teclado nativo e ao Keychron K3. Veja [karabiner/README.md](karabiner/README.md) para o mapeamento completo, o mecanismo de tap-hold usado e o profile "Nativo" (kill switch rápido)
 - **skhd** — configuração do [skhd](https://github.com/asmvik/skhd) (`.skhdrc`). Binds de `hyper + letra` para abrir/focar apps (`c` Chrome, `t` WezTerm, `f` Finder, `n` Notion, `y` YouTube); window management via yabai ainda não decidido
 - **navi** — cheatsheets do [navi](https://github.com/denisidoro/navi) para consultar os atalhos e customizações deste repositório (`navi` ou `Ctrl+G` no shell). Veja [navi/README.md](navi/README.md) para a convenção dos `.cheat` e como mantê-los atualizados
-- **zellij** — configuração do [Zellij](https://zellij.dev) (`config.kdl`, tema `coolnight`, layouts). `LEADER+e` no WezTerm entra na sessão do projeto atual (ou abre o session-manager pra criar uma nova); layouts de desenvolvimento prontos pra `rust`, `go`, `java` e `web` (editor Helix + árvore de arquivos + lazygit + pane de agente de IA + shell). Barra de tabs/status via plugin [zjstatus](https://github.com/dj95/zjstatus) (baixado automaticamente pelo Zellij no primeiro uso, pinado em release)
+- **zellij** — configuração do [Zellij](https://zellij.dev) (`config.kdl`, tema `coolnight`, layouts). `LEADER+e` no WezTerm entra na sessão do projeto atual (ou abre o session-manager pra criar uma nova); layouts de desenvolvimento prontos pra `rust`, `go`, `java` e `web` (editor Helix + lazygit + pane de agente de IA + shell). Barra de tabs/status via plugin [zjstatus](https://github.com/dj95/zjstatus) (baixado automaticamente pelo Zellij no primeiro uso, pinado em release)

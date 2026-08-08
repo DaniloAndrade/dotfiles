@@ -119,8 +119,9 @@ config.keys = {
       local cwd_uri = pane:get_current_working_dir()
       local cwd = cwd_uri and cwd_uri.file_path or os.getenv("HOME")
       local project = cwd:gsub("/$", ""):match("([^/]+)$") or "zellij"
+      local escaped_project = project:gsub("([\\\"$`])", "\\%1")
       window:perform_action(
-        act.SendString('zellij attach "' .. project .. '" 2>/dev/null || zellij --layout welcome\n'),
+        act.SendString('zellij attach "' .. escaped_project .. '" 2>/dev/null || zellij --layout welcome\n'),
         pane
       )
     end),

@@ -49,3 +49,7 @@ echo "Leader + R → renomear workspace atual"
 % wezterm
 # Leader + Tab → workspace anterior
 echo "Leader + Tab → trocar pro workspace anterior"
+
+% wezterm
+# Leader + e → attach na sessão zellij do projeto atual (ou abre o session-manager se não existir)
+echo "Leader + e → zellij: attach/criar sessão do projeto"

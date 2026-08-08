@@ -30,3 +30,9 @@ Leader: `Ctrl+Space` (timeout: 2s)
 | `Leader + s` | Listar workspaces (fuzzy) |
 | `Leader + R` | Renomear workspace atual |
 | `Leader + Tab` | Workspace anterior |
+
+## Zellij
+
+| Atalho | Ação |
+|---|---|
+| `Leader + e` | Zellij: attach na sessão do projeto (ou abre o session-manager) |
