@@ -7,8 +7,7 @@ layout {
                 format_right  ""
                 format_space  "#[bg=#011423]"
 
-                border_enabled             false
-                hide_frame_for_single_pane true
+                border_enabled false
 
                 tab_normal "#[bg=#011423,fg=#214969] {name} "
                 tab_active "#[bg=#033259,fg=#47FF9C,bold] ▶ {name} "
