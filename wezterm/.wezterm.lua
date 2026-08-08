@@ -30,6 +30,7 @@ config.colors = {
 config.enable_kitty_keyboard = true
 config.font_size = 19
 config.window_decorations = "RESIZE"
+
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
 config.window_background_opacity = 0.75
