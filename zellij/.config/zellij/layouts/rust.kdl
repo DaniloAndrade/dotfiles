@@ -21,9 +21,6 @@ layout {
     }
     tab name="🦀 rust" {
         pane split_direction="vertical" {
-            pane size="15%" {
-                plugin location="zellij:strider"
-            }
             pane command="hx" {
                 args "."
             }
