@@ -20,11 +20,6 @@ layout {
         }
     }
     tab name="💻 term" {
-        pane split_direction="vertical" {
-            pane command="hx" {
-                args "."
-            }
-            pane name="shell"
-        }
+        pane name="shell"
     }
 }
