@@ -34,7 +34,7 @@ config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 10
-config.window_padding = { left = 4, right = 4, top = 4, bottom = 4 }
+config.window_padding = { left = 4, right = 4, top = 0, bottom = 4 }
 
 config.inactive_pane_hsb = {
   saturation = 0.7,
