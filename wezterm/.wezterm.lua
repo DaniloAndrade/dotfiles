@@ -130,9 +130,13 @@ config.keys = {
   -- normalmente é o próprio nome do processo (ex: "zsh"); só precisa de
   -- override aqui quando o binário tem nome diferente da tag usada nos
   -- .cheat (navi/README.md documenta as tags). Sem match, abre sem filtro.
+  -- ALT+SHIFT (não só ALT): Alt+h sozinho é o bind nativo do Zellij pra
+  -- navegar pra pane/aba à esquerda (MoveFocusOrTab) — como o WezTerm
+  -- intercepta a tecla antes dela chegar na sessão, mantê-lo em Alt puro
+  -- deixaria a navegação do Zellij morta. Movido pra abrir espaço.
   {
     key = "h",
-    mods = "ALT",
+    mods = "ALT|SHIFT",
     action = wezterm.action_callback(function(window, pane)
       local navi_tag_overrides = { hx = "helix" }
       local process = pane:get_foreground_process_name() or ""
