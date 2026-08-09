@@ -173,6 +173,13 @@ keybinds clear-defaults=true {
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
+        bind "Alt s" {
+            Run "bash" "-c" "session=$(zellij list-sessions -s | fzf --prompt='Session> '); [ -n \"$session\" ] && zellij action switch-session \"$session\"" {
+                floating true
+                close_on_exit true
+                name "Sessions"
+            }
+        }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
