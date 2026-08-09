@@ -26,3 +26,7 @@ echo "Ctrl g → o → w → session-manager (trocar/criar sessão)"
 # No welcome screen / session-manager: digite o nome, escolha o layout na lista
 # (rust/go/java/web/default) e opcionalmente o folder com Ctrl+f
 echo "No session-manager: nome → layout (rust/go/java/web/default) → Ctrl+f pro folder"
+
+% zellij
+# Alt+s → picker fzf pra trocar de sessão (Ctrl-j/Ctrl-k navega, Enter troca, Esc cancela)
+echo "Alt+s → picker fzf pra trocar de sessão (Ctrl-j/Ctrl-k navega)"
