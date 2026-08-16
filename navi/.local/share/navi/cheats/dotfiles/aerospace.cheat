@@ -33,3 +33,19 @@ echo "[window mode] 1 DEV | 2 WEB | 3 COMM | 4 DOCS | 5 PERSONAL | 6 MONITORING"
 % aerospace
 # [modo window] Esc ou Enter → sai do modo, volta pro main
 echo "[window mode] Esc/Enter → mode main"
+
+% aerospace
+# Hyper+R → entra no modo resize (ajustar largura/altura)
+echo "Hyper+R → entra no modo resize"
+
+% aerospace
+# [modo resize] H/L → largura -50/+50, J/K → altura -50/+50
+echo "[resize mode] H/L width -50/+50 | J/K height -50/+50 | Esc/Enter → mode main"
+
+% aerospace
+# Hyper+Space → entra no modo service (reset layout, floating, fechar outras, join-with)
+echo "Hyper+Space → entra no modo service"
+
+% aerospace
+# [modo service] R reset layout | F toggle floating | Backspace fecha outras | H/J/K/L join-with
+echo "[service mode] R reset | F floating toggle | Backspace close-others | H/J/K/L join-with | Esc → mode main"
