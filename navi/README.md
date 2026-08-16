@@ -38,7 +38,8 @@ navi/
     ├── zsh.cheat
     ├── karabiner.cheat
     ├── wezterm.cheat
-    └── helix.cheat
+    ├── helix.cheat
+    └── aerospace.cheat
 ```
 
 `config.yaml` tem duas partes: `client.tealdeer: true` (o `tldr` instalado aqui é o `tlrc`, que só
@@ -80,5 +81,6 @@ app, abre com o filtro vazio — dá pra apagar a query no fzf e navegar tudo no
 
 Curadoria manual, não gerada automaticamente a partir dos outros READMEs. Sempre que um atalho for
 adicionado/alterado em `skhd/.skhdrc`, `karabiner/README.md`, `wezterm/KEYBINDINGS.md`,
-`helix/CONFIG.md` ou nos aliases do `zsh/.zshrc`, atualize o `.cheat` correspondente na mesma
-mudança — senão o catálogo do navi fica desatualizado silenciosamente.
+`helix/CONFIG.md`, `aerospace/.config/aerospace/aerospace.toml` ou nos aliases do `zsh/.zshrc`,
+atualize o `.cheat` correspondente na mesma mudança — senão o catálogo do navi fica desatualizado
+silenciosamente.

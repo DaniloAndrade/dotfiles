@@ -14,7 +14,7 @@ accordion-padding = 30
 
 focus-follows-mouse.enabled = false
 
-# 1=DEV 2=WEB 3=COMM 4=DOCS 5=PERSONAL 6=MONITORING (ver ctrl-alt-N abaixo)
+# 1=DEV 2=WEB 3=COMM 4=DOCS 5=PERSONAL 6=MONITORING (ver cmd-ctrl-alt-shift-N abaixo)
 persistent-workspaces = ["DEV", "WEB", "COMM", "DOCS", "PERSONAL", "MONITORING"]
 
 gaps.inner.horizontal = 8
@@ -65,6 +65,7 @@ shift-l = 'swap right --wrap-around'
 6 = 'move-node-to-workspace MONITORING'
 
 esc = 'mode main'
+enter = 'mode main'
 
 # --- DEV ---
 [[on-window-detected]]

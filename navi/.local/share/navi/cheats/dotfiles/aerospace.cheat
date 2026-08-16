@@ -1,0 +1,35 @@
+% aerospace
+# Hyper+H/J/K/L → foco (esquerda/baixo/cima/direita)
+echo "Hyper+H/J/K/L → foco esquerda/baixo/cima/direita"
+
+% aerospace
+# Hyper+1..6 → troca de workspace
+echo "Hyper+1 DEV | Hyper+2 WEB | Hyper+3 COMM | Hyper+4 DOCS | Hyper+5 PERSONAL | Hyper+6 MONITORING"
+
+% aerospace
+# Hyper+Tab → volta pro workspace anterior
+echo "Hyper+Tab → workspace-back-and-forth"
+
+% aerospace
+# Hyper+A → alterna layout tiles/accordion (empilhado)
+echo "Hyper+A → toggle tiles/accordion"
+
+% aerospace
+# Hyper+W → entra no modo window (mover/trocar/mandar janela)
+echo "Hyper+W → entra no modo window"
+
+% aerospace
+# [modo window] H/J/K/L → move a janela (toque, não segure)
+echo "[window mode] H/J/K/L → move left/down/up/right"
+
+% aerospace
+# [modo window] Shift+H/J/K/L → troca de lugar com a vizinha (swap, wrap-around)
+echo "[window mode] Shift+H/J/K/L → swap left/down/up/right"
+
+% aerospace
+# [modo window] 1..6 → manda a janela pro workspace
+echo "[window mode] 1 DEV | 2 WEB | 3 COMM | 4 DOCS | 5 PERSONAL | 6 MONITORING"
+
+% aerospace
+# [modo window] Esc ou Enter → sai do modo, volta pro main
+echo "[window mode] Esc/Enter → mode main"
