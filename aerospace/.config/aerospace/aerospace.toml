@@ -9,6 +9,9 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
+# tamanho da "aba" visível das janelas empilhadas quando o container está em accordion
+accordion-padding = 30
+
 focus-follows-mouse.enabled = false
 
 # 1=DEV 2=WEB 3=COMM 4=DOCS 5=PERSONAL 6=MONITORING (ver ctrl-alt-N abaixo)
@@ -37,6 +40,9 @@ ctrl-alt-cmd-h = 'swap left --wrap-around'
 ctrl-alt-cmd-j = 'swap down --wrap-around'
 ctrl-alt-cmd-k = 'swap up --wrap-around'
 ctrl-alt-cmd-l = 'swap right --wrap-around'
+
+# alterna o container atual entre tiles (lado a lado) e accordion (empilhado)
+ctrl-alt-cmd-a = 'layout accordion tiles'
 
 ctrl-alt-1 = 'workspace DEV'
 ctrl-alt-2 = 'workspace WEB'
