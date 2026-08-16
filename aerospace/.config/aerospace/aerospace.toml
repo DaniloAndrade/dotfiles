@@ -11,7 +11,8 @@ default-root-container-orientation = 'auto'
 
 focus-follows-mouse.enabled = false
 
-persistent-workspaces = ["1", "2", "3", "4", "5", "6"]
+# 1=DEV 2=WEB 3=COMM 4=DOCS 5=PERSONAL 6=MONITORING (ver ctrl-alt-N abaixo)
+persistent-workspaces = ["DEV", "WEB", "COMM", "DOCS", "PERSONAL", "MONITORING"]
 
 gaps.inner.horizontal = 8
 gaps.inner.vertical = 8
@@ -31,18 +32,71 @@ ctrl-alt-shift-j = 'move down'
 ctrl-alt-shift-k = 'move up'
 ctrl-alt-shift-l = 'move right'
 
-ctrl-alt-1 = 'workspace 1'
-ctrl-alt-2 = 'workspace 2'
-ctrl-alt-3 = 'workspace 3'
-ctrl-alt-4 = 'workspace 4'
-ctrl-alt-5 = 'workspace 5'
-ctrl-alt-6 = 'workspace 6'
+ctrl-alt-1 = 'workspace DEV'
+ctrl-alt-2 = 'workspace WEB'
+ctrl-alt-3 = 'workspace COMM'
+ctrl-alt-4 = 'workspace DOCS'
+ctrl-alt-5 = 'workspace PERSONAL'
+ctrl-alt-6 = 'workspace MONITORING'
 
-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
-ctrl-alt-shift-2 = 'move-node-to-workspace 2'
-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
+ctrl-alt-shift-1 = 'move-node-to-workspace DEV'
+ctrl-alt-shift-2 = 'move-node-to-workspace WEB'
+ctrl-alt-shift-3 = 'move-node-to-workspace COMM'
+ctrl-alt-shift-4 = 'move-node-to-workspace DOCS'
+ctrl-alt-shift-5 = 'move-node-to-workspace PERSONAL'
+ctrl-alt-shift-6 = 'move-node-to-workspace MONITORING'
 
 ctrl-alt-tab = 'workspace-back-and-forth'
+
+# --- DEV ---
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm' # WezTerm
+run = ['move-node-to-workspace DEV']
+
+[[on-window-detected]]
+if.app-id = 'com.sublimetext.4' # Sublime Text
+run = ['move-node-to-workspace DEV']
+
+[[on-window-detected]]
+if.app-id = 'com.axosoft.gitkraken' # GitKraken
+run = ['move-node-to-workspace DEV']
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop' # Claude (desktop)
+run = ['move-node-to-workspace DEV']
+
+# --- WEB ---
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome' # Google Chrome
+run = ['move-node-to-workspace WEB']
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml' # YouTube (Chrome app/PWA)
+run = ['move-node-to-workspace WEB']
+
+# --- COMM ---
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal' # Calendário
+run = ['move-node-to-workspace COMM']
+
+# --- DOCS ---
+[[on-window-detected]]
+if.app-id = 'md.obsidian' # Obsidian
+run = ['move-node-to-workspace DOCS']
+
+[[on-window-detected]]
+if.app-id = 'notion.id' # Notion
+run = ['move-node-to-workspace DOCS']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview' # Pré-Visualização (Preview)
+run = ['move-node-to-workspace DOCS']
+
+# --- Floating: janelas de preferências / ferramentas pequenas, não fazem sentido em tile ---
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences' # Ajustes do Sistema
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.f-secure.fscunifiedui' # F-Secure
+run = ['layout floating']
