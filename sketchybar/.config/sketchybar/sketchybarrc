@@ -25,4 +25,7 @@ sketchybar --add item aerospace_mode left \
                   padding_left=8 \
                   padding_right=8
 
+AEROSPACE_FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused) "$HOME/.config/sketchybar/plugins/aerospace_workspace.sh"
+"$HOME/.config/sketchybar/plugins/aerospace_mode.sh"
+
 sketchybar --update
