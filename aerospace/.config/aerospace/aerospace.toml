@@ -32,6 +32,12 @@ ctrl-alt-shift-j = 'move down'
 ctrl-alt-shift-k = 'move up'
 ctrl-alt-shift-l = 'move right'
 
+# rotacionar/trocar posição com a janela vizinha, sem mover o foco
+ctrl-alt-cmd-h = 'swap left --wrap-around'
+ctrl-alt-cmd-j = 'swap down --wrap-around'
+ctrl-alt-cmd-k = 'swap up --wrap-around'
+ctrl-alt-cmd-l = 'swap right --wrap-around'
+
 ctrl-alt-1 = 'workspace DEV'
 ctrl-alt-2 = 'workspace WEB'
 ctrl-alt-3 = 'workspace COMM'
