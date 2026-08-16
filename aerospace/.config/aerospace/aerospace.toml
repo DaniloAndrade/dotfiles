@@ -25,40 +25,46 @@ gaps.outer.top = 8
 gaps.outer.bottom = 8
 
 [mode.main.binding]
-ctrl-alt-h = 'focus left'
-ctrl-alt-j = 'focus down'
-ctrl-alt-k = 'focus up'
-ctrl-alt-l = 'focus right'
+cmd-ctrl-alt-shift-h = 'focus left'
+cmd-ctrl-alt-shift-j = 'focus down'
+cmd-ctrl-alt-shift-k = 'focus up'
+cmd-ctrl-alt-shift-l = 'focus right'
 
-ctrl-alt-shift-h = 'move left'
-ctrl-alt-shift-j = 'move down'
-ctrl-alt-shift-k = 'move up'
-ctrl-alt-shift-l = 'move right'
+cmd-ctrl-alt-shift-1 = 'workspace DEV'
+cmd-ctrl-alt-shift-2 = 'workspace WEB'
+cmd-ctrl-alt-shift-3 = 'workspace COMM'
+cmd-ctrl-alt-shift-4 = 'workspace DOCS'
+cmd-ctrl-alt-shift-5 = 'workspace PERSONAL'
+cmd-ctrl-alt-shift-6 = 'workspace MONITORING'
 
-# rotacionar/trocar posição com a janela vizinha, sem mover o foco
-ctrl-alt-cmd-h = 'swap left --wrap-around'
-ctrl-alt-cmd-j = 'swap down --wrap-around'
-ctrl-alt-cmd-k = 'swap up --wrap-around'
-ctrl-alt-cmd-l = 'swap right --wrap-around'
+cmd-ctrl-alt-shift-tab = 'workspace-back-and-forth'
 
 # alterna o container atual entre tiles (lado a lado) e accordion (empilhado)
-ctrl-alt-cmd-a = 'layout accordion tiles'
+cmd-ctrl-alt-shift-a = 'layout accordion tiles'
 
-ctrl-alt-1 = 'workspace DEV'
-ctrl-alt-2 = 'workspace WEB'
-ctrl-alt-3 = 'workspace COMM'
-ctrl-alt-4 = 'workspace DOCS'
-ctrl-alt-5 = 'workspace PERSONAL'
-ctrl-alt-6 = 'workspace MONITORING'
+# entra no modo window (mover/trocar/mandar janela pra outro workspace)
+cmd-ctrl-alt-shift-w = 'mode window'
 
-ctrl-alt-shift-1 = 'move-node-to-workspace DEV'
-ctrl-alt-shift-2 = 'move-node-to-workspace WEB'
-ctrl-alt-shift-3 = 'move-node-to-workspace COMM'
-ctrl-alt-shift-4 = 'move-node-to-workspace DOCS'
-ctrl-alt-shift-5 = 'move-node-to-workspace PERSONAL'
-ctrl-alt-shift-6 = 'move-node-to-workspace MONITORING'
+[mode.window.binding]
+h = 'move left'
+j = 'move down'
+k = 'move up'
+l = 'move right'
 
-ctrl-alt-tab = 'workspace-back-and-forth'
+# rotacionar/trocar posição com a janela vizinha, sem mover o foco
+shift-h = 'swap left --wrap-around'
+shift-j = 'swap down --wrap-around'
+shift-k = 'swap up --wrap-around'
+shift-l = 'swap right --wrap-around'
+
+1 = 'move-node-to-workspace DEV'
+2 = 'move-node-to-workspace WEB'
+3 = 'move-node-to-workspace COMM'
+4 = 'move-node-to-workspace DOCS'
+5 = 'move-node-to-workspace PERSONAL'
+6 = 'move-node-to-workspace MONITORING'
+
+esc = 'mode main'
 
 # --- DEV ---
 [[on-window-detected]]
