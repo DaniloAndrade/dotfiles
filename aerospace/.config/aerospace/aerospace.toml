@@ -51,46 +51,46 @@ ctrl-alt-tab = 'workspace-back-and-forth'
 # --- DEV ---
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm' # WezTerm
-run = ['move-node-to-workspace DEV']
+run = ['move-node-to-workspace DEV --focus-follows-window']
 
 [[on-window-detected]]
 if.app-id = 'com.sublimetext.4' # Sublime Text
-run = ['move-node-to-workspace DEV']
+run = ['move-node-to-workspace DEV --focus-follows-window']
 
 [[on-window-detected]]
 if.app-id = 'com.axosoft.gitkraken' # GitKraken
-run = ['move-node-to-workspace DEV']
+run = ['move-node-to-workspace DEV --focus-follows-window']
 
 [[on-window-detected]]
 if.app-id = 'com.anthropic.claudefordesktop' # Claude (desktop)
-run = ['move-node-to-workspace DEV']
+run = ['move-node-to-workspace DEV --focus-follows-window']
 
 # --- WEB ---
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome' # Google Chrome
-run = ['move-node-to-workspace WEB']
+run = ['move-node-to-workspace WEB --focus-follows-window']
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml' # YouTube (Chrome app/PWA)
-run = ['move-node-to-workspace WEB']
+run = ['move-node-to-workspace WEB --focus-follows-window']
 
 # --- COMM ---
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal' # Calendário
-run = ['move-node-to-workspace COMM']
+run = ['move-node-to-workspace COMM --focus-follows-window']
 
 # --- DOCS ---
 [[on-window-detected]]
 if.app-id = 'md.obsidian' # Obsidian
-run = ['move-node-to-workspace DOCS']
+run = ['move-node-to-workspace DOCS --focus-follows-window']
 
 [[on-window-detected]]
 if.app-id = 'notion.id' # Notion
-run = ['move-node-to-workspace DOCS']
+run = ['move-node-to-workspace DOCS --focus-follows-window']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Preview' # Pré-Visualização (Preview)
-run = ['move-node-to-workspace DOCS']
+run = ['move-node-to-workspace DOCS --focus-follows-window']
 
 # --- Floating: janelas de preferências / ferramentas pequenas, não fazem sentido em tile ---
 [[on-window-detected]]
