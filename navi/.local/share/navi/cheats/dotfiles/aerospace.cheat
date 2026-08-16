@@ -3,8 +3,8 @@
 echo "Hyper+H/J/K/L → foco esquerda/baixo/cima/direita"
 
 % aerospace
-# Hyper+1..6 → troca de workspace
-echo "Hyper+1 DEV | Hyper+2 WEB | Hyper+3 COMM | Hyper+4 DOCS | Hyper+5 PERSONAL | Hyper+6 MONITORING"
+# Hyper+7/8/9/0/-/= → troca de workspace
+echo "Hyper+7 DEV | Hyper+8 WEB | Hyper+9 COMM | Hyper+0 DOCS | Hyper+- PERSONAL | Hyper+= MONITORING"
 
 % aerospace
 # Hyper+Tab → volta pro workspace anterior
