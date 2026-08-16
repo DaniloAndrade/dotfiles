@@ -4,4 +4,16 @@ source "$HOME/.config/sketchybar/colors.sh"
 
 sketchybar --bar position=top height=32 color="$COLOR_BG" topmost=window
 
+for ws in DEV WEB COMM DOCS PERSONAL MONITORING; do
+  sketchybar --add item "workspace_${ws}" left \
+             --set "workspace_${ws}" \
+                    label="$ws" \
+                    label.color="$COLOR_FG" \
+                    background.color="$COLOR_BG" \
+                    background.drawing=on \
+                    padding_left=6 \
+                    padding_right=6 \
+                    click_script="aerospace workspace ${ws}"
+done
+
 sketchybar --update
