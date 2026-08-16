@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source "$HOME/.config/sketchybar/colors.sh"
+
+sketchybar --bar position=top height=32 color="$COLOR_BG" topmost=window
+
+sketchybar --update
