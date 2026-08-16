@@ -14,7 +14,7 @@ accordion-padding = 30
 
 focus-follows-mouse.enabled = false
 
-# 1=DEV 2=WEB 3=COMM 4=DOCS 5=PERSONAL 6=MONITORING (ver cmd-ctrl-alt-shift-N abaixo)
+# 7=DEV 8=WEB 9=COMM 0=DOCS minus=PERSONAL equal=MONITORING (ver cmd-ctrl-alt-shift-N abaixo)
 persistent-workspaces = ["DEV", "WEB", "COMM", "DOCS", "PERSONAL", "MONITORING"]
 
 gaps.inner.horizontal = 8
@@ -30,12 +30,12 @@ cmd-ctrl-alt-shift-j = 'focus down'
 cmd-ctrl-alt-shift-k = 'focus up'
 cmd-ctrl-alt-shift-l = 'focus right'
 
-cmd-ctrl-alt-shift-1 = 'workspace DEV'
-cmd-ctrl-alt-shift-2 = 'workspace WEB'
-cmd-ctrl-alt-shift-3 = 'workspace COMM'
-cmd-ctrl-alt-shift-4 = 'workspace DOCS'
-cmd-ctrl-alt-shift-5 = 'workspace PERSONAL'
-cmd-ctrl-alt-shift-6 = 'workspace MONITORING'
+cmd-ctrl-alt-shift-7 = 'workspace DEV'
+cmd-ctrl-alt-shift-8 = 'workspace WEB'
+cmd-ctrl-alt-shift-9 = 'workspace COMM'
+cmd-ctrl-alt-shift-0 = 'workspace DOCS'
+cmd-ctrl-alt-shift-minus = 'workspace PERSONAL'
+cmd-ctrl-alt-shift-equal = 'workspace MONITORING'
 
 cmd-ctrl-alt-shift-tab = 'workspace-back-and-forth'
 
