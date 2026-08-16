@@ -16,4 +16,13 @@ for ws in DEV WEB COMM DOCS PERSONAL MONITORING; do
                     click_script="aerospace workspace ${ws}"
 done
 
+sketchybar --add item aerospace_mode left \
+           --set aerospace_mode \
+                  label="MAIN" \
+                  label.color="$COLOR_FG" \
+                  background.color="$COLOR_BG" \
+                  background.drawing=on \
+                  padding_left=8 \
+                  padding_right=8
+
 sketchybar --update
