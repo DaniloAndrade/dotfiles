@@ -45,6 +45,12 @@ cmd-ctrl-alt-shift-a = 'layout accordion tiles'
 # entra no modo window (mover/trocar/mandar janela pra outro workspace)
 cmd-ctrl-alt-shift-w = 'mode window'
 
+# entra no modo resize (ajustar largura/altura da janela focada)
+cmd-ctrl-alt-shift-r = 'mode resize'
+
+# entra no modo service (reset de layout, floating avulso, fechar outras, join-with)
+cmd-ctrl-alt-shift-space = 'mode service'
+
 [mode.window.binding]
 h = 'move left'
 j = 'move down'
@@ -66,6 +72,27 @@ shift-l = 'swap right --wrap-around'
 
 esc = 'mode main'
 enter = 'mode main'
+
+[mode.resize.binding]
+h = 'resize width -50'
+l = 'resize width +50'
+j = 'resize height -50'
+k = 'resize height +50'
+
+esc = 'mode main'
+enter = 'mode main'
+
+[mode.service.binding]
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
+
+h = ['join-with left', 'mode main']
+j = ['join-with down', 'mode main']
+k = ['join-with up', 'mode main']
+l = ['join-with right', 'mode main']
+
+esc = 'mode main'
 
 # --- DEV ---
 [[on-window-detected]]
