@@ -14,6 +14,9 @@ accordion-padding = 30
 
 focus-follows-mouse.enabled = false
 
+on-focus-changed = ['exec-and-forget /Users/danilosandrade/.config/sketchybar/plugins/aerospace_workspace.sh']
+on-mode-changed = ['exec-and-forget /Users/danilosandrade/.config/sketchybar/plugins/aerospace_mode.sh']
+
 # 7=DEV 8=WEB 9=COMM 0=DOCS minus=PERSONAL equal=MONITORING (ver cmd-ctrl-alt-shift-N abaixo)
 persistent-workspaces = ["DEV", "WEB", "COMM", "DOCS", "PERSONAL", "MONITORING"]
 
